@@ -1,0 +1,14 @@
+package aitividade1;
+
+public class Retangulo implements Geometrica{
+
+	@Override
+	public double calcularArea(double base, double altura) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+	
+
+}

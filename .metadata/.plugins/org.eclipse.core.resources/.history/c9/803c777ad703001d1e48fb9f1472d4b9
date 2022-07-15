@@ -1,0 +1,5 @@
+package aitividade1;
+
+public interface Geometrica {
+
+}

@@ -1,0 +1,9 @@
+package atividade2;
+
+public class Animal {
+	
+	private String nome, cor, ambiente;
+	private int numPatas = 4;
+	private float comprimento, velocidade;
+
+}

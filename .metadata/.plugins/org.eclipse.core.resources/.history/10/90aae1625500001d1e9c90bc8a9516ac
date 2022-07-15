@@ -1,0 +1,20 @@
+package atividade1;
+
+public class Contas {
+
+	public static void main(String[] args) {
+		
+		ContaPoupanca poup = new ContaPoupanca("Robson", 1516);
+		
+		
+		
+		//POUPANÇA
+		poup.depositar(1000);
+		poup.setDiaRendimento(1);
+		System.out.println("antes de calcular: " + poup.getSaldo());
+		System.out.println("depois de calcular: " + poup.calcNovoSaldo());
+		System.out.println(poup.toString());
+
+	}
+
+}

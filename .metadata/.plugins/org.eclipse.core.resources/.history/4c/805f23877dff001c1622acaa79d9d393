@@ -1,0 +1,12 @@
+package Exercicio1;
+
+public class AssistenteTecnico extends Assistente {
+	
+	private double bonusSalarial;
+	
+	@Override
+	public void addAumento() {
+		super.addAumento();
+	}
+
+}

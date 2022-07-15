@@ -1,0 +1,19 @@
+package Exercicio3;
+
+public class Empregado extends Pessoa {
+
+	private int codSetor;
+	private double salarioBase,imposto;
+	
+	public Empregado(String nome, String endereco, String telefone) {
+		super(nome, endereco, telefone);
+		
+	}
+	
+	public double calcSalario() {
+		return this.salarioBase - this.imposto;
+	}
+	
+	
+
+}

@@ -1,0 +1,48 @@
+package atividade2;
+
+public class Docente extends Funcionario {
+
+	private String titulacao;
+	private int nivel;
+	private double adicional;
+	
+	
+	@Override
+	public void calcularSalario() {
+		switch (this.getNivel()) {
+		case 1,2,3:
+			adicional = 0.20;
+		case 4,5,6:
+			adicional = 0.50;
+		case 7,8,9,10:
+			adicional = 0.80;
+		
+		}
+		
+		
+		System.out.println("Nome: " + this.getNome());
+		System.out.println("Titulação: " + this.getTitulacao());
+		System.out.println("Nivel: " + this.getNivel());
+		System.out.println("Salário: R$" + (this.getSalario()+ (this.getSalario()*adicional)));
+		
+	}
+	
+	public String getTitulacao() {
+		return titulacao;
+	}
+
+	public void setTitulacao(String titulacao) {
+		this.titulacao = titulacao;
+	}
+
+	public int getNivel() {
+		return nivel;
+	}
+
+	public void setNivel(int nivel) {
+		this.nivel = nivel;
+	}
+
+	
+
+}

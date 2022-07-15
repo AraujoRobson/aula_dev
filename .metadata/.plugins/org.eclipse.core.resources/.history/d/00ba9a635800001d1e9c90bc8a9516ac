@@ -1,0 +1,27 @@
+package atividade1;
+
+public class Contas {
+
+	public static void main(String[] args) {
+		
+		ContaPoupanca poup = new ContaPoupanca("Robson", 1516);
+													//nome, numConta, limite
+		ContaEspecial especial = new ContaEspecial("Fulaninho", 9832, 2000);
+		
+		
+		//POUPANÇA
+		poup.depositar(50000);
+		poup.sacar(1000);
+		poup.setDiaRendimento(50);
+		System.out.println(poup.toString());
+		System.out.println("-----------");
+		
+		//ESPECIAL
+		especial.depositar(4000);
+		poup.sacar(2000);
+		System.out.println(especial.toString());
+		System.out.println("-----------");
+
+	}
+
+}

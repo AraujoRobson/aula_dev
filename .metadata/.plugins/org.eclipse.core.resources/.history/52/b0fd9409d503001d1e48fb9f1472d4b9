@@ -1,0 +1,14 @@
+package atividade2;
+
+import java.util.ArrayList;
+
+public class Homem extends Animal{
+	
+	ArrayList<Animal> homem = new ArrayList<>();
+	
+	@Override
+	public void falar() {
+		System.out.println("Oi");
+	}
+
+}

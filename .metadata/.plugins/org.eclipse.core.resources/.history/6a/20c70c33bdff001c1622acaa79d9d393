@@ -1,0 +1,14 @@
+package Exercicio3;
+
+public class Vendedor extends Empregado {
+
+	public Vendedor(String nome, String endereco, String telefone) {
+		super(nome, endereco, telefone);
+		
+	}
+	
+	
+	
+	
+
+}

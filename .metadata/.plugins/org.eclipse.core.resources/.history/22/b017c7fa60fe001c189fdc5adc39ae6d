@@ -1,0 +1,32 @@
+package atividade2;
+
+public class Tecnico extends Funcionario {
+	private String funcao;
+	private double horaExtra;
+	
+	@Override
+	public void calcularSalario() {
+		System.out.println("Nome: " + this.getNome());
+		System.out.println("Função: " + this.getFuncao());
+		System.out.println("Salário + Horas Extras: R$" + (this.getSalario() + this.getHoraExtra()));
+	}
+
+	public String getFuncao() {
+		return funcao;
+	}
+
+	public void setFuncao(String funcao) {
+		this.funcao = funcao;
+	}
+
+	public double getHoraExtra() {
+		return horaExtra;
+	}
+
+	public void setHoraExtra(double horaExtra) {
+		this.horaExtra = horaExtra;
+	}
+	
+	
+	
+}

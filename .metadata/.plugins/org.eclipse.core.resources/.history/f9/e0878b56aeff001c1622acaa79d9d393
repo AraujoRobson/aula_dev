@@ -1,0 +1,18 @@
+package Exercicio3;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Fornecedor fornecedor = new Fornecedor("ABC LTDA", "Rua Goiabinha", "49 7070 7070");
+		
+		//FORNECEDOR
+		fornecedor.setValorCredito(1000);
+		fornecedor.setValorDivida(300);
+		System.out.println("Fornecedor");
+		System.out.println(fornecedor.toString());
+		System.out.println("-------");
+		
+		
+	}
+
+}

@@ -1,0 +1,13 @@
+package Exercicio1;
+
+public class Testes {
+
+	public static void main(String[] args) {
+		
+		Assistente assist = new Assistente("Teste assist", 1500, 154);
+		
+		assist.exibeDados();
+
+	}
+
+}

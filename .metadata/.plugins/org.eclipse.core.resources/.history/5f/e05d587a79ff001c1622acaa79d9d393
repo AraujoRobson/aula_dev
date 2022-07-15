@@ -1,0 +1,40 @@
+package Exercicio1;
+
+public class Funcionario {
+	private String nome;
+	private double salario;
+	
+	public void addAumento(double valor) {
+		salario += valor; 
+	}
+	
+	public double ganhoAnual() {
+		return (salario*12);
+	}
+	
+	public void exibeDados() {
+		System.out.println("Nome: " + nome +
+				"\nSalário anual: " + ganhoAnual());
+	}
+	
+	
+
+	public String getNomeString() {
+		return nomeString;
+	}
+
+	public void setNomeString(String nomeString) {
+		this.nomeString = nomeString;
+	}
+
+	public double getSalario() {
+		return salario;
+	}
+
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+	
+	
+	
+}

@@ -1,0 +1,16 @@
+package Exercicio3;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Fornecedor fornecedor = new Fornecedor("Fornecedor", "Rua Goiabinha", "49 7070 7070",1000,0);
+		
+		System.out.println("Fornecedor");
+		System.out.println("Diferença: " + fornecedor.obterSaldo());
+		
+		System.out.println("-------");
+		
+		
+	}
+
+}

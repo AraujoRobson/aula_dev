@@ -1,0 +1,10 @@
+package atividade2;
+
+public class Cao extends Animal{
+
+	@Override
+	public void falar() {
+		System.out.println("Au au");
+	}
+
+}

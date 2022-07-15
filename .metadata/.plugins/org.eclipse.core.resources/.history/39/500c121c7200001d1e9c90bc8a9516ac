@@ -1,0 +1,31 @@
+package atividade2;
+
+public class Mamifero extends Animal {
+
+	public Mamifero(String nome, String cor, String alimento, float comprimento, float velocidade) {
+		super(nome, cor, alimento, comprimento, velocidade);
+	}
+
+	public void alteraNome(String nome) {
+		setNome(nome);		
+	}
+
+	public void alteraComprimento(float comprimento) {
+		setComprimento(comprimento);	
+	}
+
+	public void alteraCor(String cor) {
+		setCor(cor);
+	}
+
+	public void alteraAmbiente(String ambiente) {
+		setAmbiente(ambiente);
+	}
+
+	public void alteraVelocidade(float velocidade) {
+		setVelocidade(velocidade);
+	}
+	
+	
+
+}

@@ -1,0 +1,15 @@
+package Exercicio3;
+
+public class Administrador extends Empregado {
+	
+	
+
+	public Administrador(String nome, String endereco, String telefone, int codSetor) {
+		super(nome, endereco, telefone, codSetor);
+		
+		
+	}
+	
+	
+
+}

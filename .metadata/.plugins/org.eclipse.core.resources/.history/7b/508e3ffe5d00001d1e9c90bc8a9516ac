@@ -1,0 +1,38 @@
+package atividade2;
+
+public class Peixe extends Animal{
+
+	public Peixe(String nome, float comprimento, float velocidade) {
+		super(nome, comprimento, velocidade);
+	}
+
+	@Override
+	public void alteraNome(String nome) {
+		setNome(nome);
+		
+	}
+
+	@Override
+	public void alteraComprimento(float comprimento) {
+		setComprimento(comprimento);	
+	}
+
+	@Override
+	public void alteraCor(String cor) {
+		setCor(cor);
+	}
+
+	@Override
+	public void alteraAmbiente(String ambiente) {
+		setAmbiente(ambiente);
+	}
+
+	@Override
+	public void alteraVelocidade(float velocidade) {
+		setVelocidade(velocidade);
+	}
+	
+	
+	
+
+}

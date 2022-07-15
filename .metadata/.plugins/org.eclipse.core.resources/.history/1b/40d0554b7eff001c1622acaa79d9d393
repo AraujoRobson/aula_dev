@@ -1,0 +1,21 @@
+package Exercicio1;
+
+public class Assistente extends Funcionario {
+	
+	private int matricula;
+	
+	@Override
+	public void exibeDados() {
+		super.exibeDados();
+		System.out.println("Matrícula: " + this.getMatricula());
+	}
+
+	public int getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(int matricula) {
+		this.matricula = matricula;
+	}
+	
+}

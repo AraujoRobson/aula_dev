@@ -1,0 +1,13 @@
+package aitividade1;
+
+public class Retangulo implements Geometrica{
+
+	
+	@Override
+	public double calcularArea(double base, double altura) {
+		return base*altura;
+	}
+	
+	
+
+}

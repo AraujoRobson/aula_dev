@@ -1,0 +1,38 @@
+package atividade1;
+
+public class Vendedor extends Empregado{
+	
+	private float percentualComissao;
+
+	public Vendedor(String nome, float salario, float percentualComissao) {
+		super.setNome(nome);
+		super.salario = salario;
+		this.percentualComissao = percentualComissao;
+	}
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Vendedor [percentualComissao=" + percentualComissao +
+				", salario=" + salario + "]";
+	}
+
+
+
+	public float calcularSalario() {
+		super.setSalario(super.getSalario()+this.getPercentualComissao());
+		return super.getSalario();
+	}
+
+	public float getPercentualComissao() {
+		return percentualComissao;
+	}
+
+	public void setPercentualComissao(float percentualComissao) {
+		this.percentualComissao = percentualComissao;
+	}
+	
+	
+
+}
