@@ -6,8 +6,8 @@ public class Gato extends Animal{
 	
 		
 	@Override
-	public String falar() {
-		return "Miau";
+	public void falar() {
+		System.out.println("Miau");
 	}
 
 }

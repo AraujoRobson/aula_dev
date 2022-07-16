@@ -6,8 +6,8 @@ public class Cao extends Animal{
 	
 
 	@Override
-	public String falar() {
-		return "Au au";
+	public void falar() {
+		System.out.println("Au au");
 	}
 
 }

@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.swing.plaf.multi.MultiColorChooserUI"/>
-    <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
-    <fullyQualifiedTypeName name="java.util.Collections"/>
-    <fullyQualifiedTypeName name="abstracao.Joystick"/>
-    <fullyQualifiedTypeName name="atividade2.Veiculo"/>
-    <fullyQualifiedTypeName name="atividade2.Aluno"/>
     <fullyQualifiedTypeName name="java.text.DecimalFormat"/>
     <fullyQualifiedTypeName name="atividade3.Conta"/>
     <fullyQualifiedTypeName name="atividade2.CadernoAnotacoes"/>
@@ -45,14 +38,26 @@
     <fullyQualifiedTypeName name="atividade1.ContaEspecial"/>
     <fullyQualifiedTypeName name="atividade2.Peixe"/>
     <fullyQualifiedTypeName name="atividade2.Mamifero"/>
-    <fullyQualifiedTypeName name="atividade2.Homem"/>
-    <fullyQualifiedTypeName name="atividade2.Cao"/>
     <fullyQualifiedTypeName name="atividade2.Gato"/>
     <fullyQualifiedTypeName name="atividade2.Animal"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="aitividade1.Geometrica"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="aitividade1.Quadrado"/>
     <fullyQualifiedTypeName name="aitividade1.Retangulo"/>
     <fullyQualifiedTypeName name="aitividade1.Circulo"/>
+    <fullyQualifiedTypeName name="atividade2.Cao"/>
+    <fullyQualifiedTypeName name="atividade2.Homem"/>
+    <fullyQualifiedTypeName name="atividade.polimorfismo1.Estoque"/>
+    <fullyQualifiedTypeName name="atividade.polimorfismo1.Livros"/>
+    <fullyQualifiedTypeName name="atividade.polimorfismo1.CDs"/>
+    <fullyQualifiedTypeName name="atividade.polimorfismo1.DVDs"/>
+    <fullyQualifiedTypeName name="atividade.polimorfismo2.Empresa"/>
+    <fullyQualifiedTypeName name="atividade.polimorfismo2.SemEscolaridade"/>
+    <fullyQualifiedTypeName name="atividade.polimorfismo2.Escola"/>
+    <fullyQualifiedTypeName name="atividade.polimorfismo2.Universidade"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="atividade.polimorfismo3.Empregado"/>
+    <fullyQualifiedTypeName name="atividade.polimorfismo3.Assalariado"/>
+    <fullyQualifiedTypeName name="atividade.polimorfismo3.Comissionado"/>
+    <fullyQualifiedTypeName name="atividade.polimorfismo3.Horista"/>
 </qualifiedTypeNameHistroy>

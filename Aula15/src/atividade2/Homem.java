@@ -6,8 +6,8 @@ public class Homem extends Animal{
 	
 	
 	@Override
-	public String falar() {
-		return"Oi";
+	public void falar() {
+		System.out.println("Oi");
 	}
 
 }

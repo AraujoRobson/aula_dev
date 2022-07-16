@@ -8,13 +8,22 @@ public class Principal {
 		
 		ArrayList<Animal> animais = new ArrayList<>();
 		
-		Homem homem = new Homem();
-		Cao cao = new Cao();
-		Gato gato = new Gato();
 		
-		animais.add(homem);
-		animais.add(gato);
-		animais.add(cao);
+		
+		animais.add(new Homem());
+		animais.add(new Gato());
+		animais.add(new Cao());
+		animais.add(new Homem());
+		animais.add(new Gato());
+		animais.add(new Cao());
+		animais.add(new Homem());
+		animais.add(new Gato());
+		animais.add(new Cao());
+		animais.add(new Homem());
+		
+		for(int i = 0; i < animais.size(); i++) {
+			animais.get(i).falar();
+		}
 		
 		
 		
