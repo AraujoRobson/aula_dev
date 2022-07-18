@@ -1,32 +1,40 @@
 package atividade.polimorfismo2;
 
 public class Registros {
-	
-	private String nome, escola, universidade;
+	private String nome, nivel, escola, universidade;
 	private int codFuncional;
+	
 	public Registros(String nome, int codFuncional) {
 		super();
 		this.nome = nome;
 		this.codFuncional = codFuncional;
 	}
+
+	public Registros(String nome, int codFuncional, String nivelEscolar, String escola) {
+		this(nome, codFuncional);
+		this.nivel = nivelEscolar;
+		this.escola = escola;
+	}	
 	
-	@Override
-	public String toString() {
-		return "Nome: " + nome + "\nC�digo Funcional: " + codFuncional;
-	}
-
-
-
-	public void escolaridade() {
-		System.out.println(toString());
-	}
-	
-	public void escolaridade(String nivelEscolar,String escola) {
-		System.out.println(toString() + "\nEnsino:" + nivelEscolar +". Escola: " + escola);		
+	public Registros(String nome, int codFuncional, String nivelEscolar, String escola, String universidade) {
+		this(nome, codFuncional, nivelEscolar, escola);
+		this.universidade = universidade;
 	}
 	
-	public void escolaridade(String instituicao) {
-		System.out.println(toString() + "\nEnsino: Superior. Universidade: " + instituicao);	
+	public String imprimir() {
+		String registro = "Nome: " + nome + "\nCódigo Funcional: " + codFuncional;
+		
+		if (nivel == null) {
+			return registro;
+		}
+		
+		registro = registro + "\nNível Escolar: " + nivel + "\nEscola: " + escola;
+		
+		if (universidade == null) {
+			return registro;
+		}		
+		
+		return registro + "\nUniversidade: " + universidade;
 	}
 	
 }
