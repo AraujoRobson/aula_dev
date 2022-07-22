@@ -22,13 +22,13 @@ public class Registros {
 	}
 	
 	public String imprimir() {
-		String registro = "Nome: " + nome + "\nCÃ³digo Funcional: " + codFuncional;
+		String registro = "Nome: " + nome + "\nCódigo Funcional: " + codFuncional;
 		
 		if (nivel == null) {
 			return registro;
 		}
 		
-		registro = registro + "\nNÃ­vel Escolar: " + nivel + "\nEscola: " + escola;
+		registro = registro + "\nNível Escolar: " + nivel + "\nEscola: " + escola;
 		
 		if (universidade == null) {
 			return registro;
