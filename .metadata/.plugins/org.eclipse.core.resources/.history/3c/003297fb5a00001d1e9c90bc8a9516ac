@@ -1,8 +1,0 @@
-package atividade2;
-
-public class Animal {
-	
-	private String nome;
-	private int numPatas = 4;
-
-}

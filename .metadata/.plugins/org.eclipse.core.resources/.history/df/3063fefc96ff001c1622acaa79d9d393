@@ -1,9 +1,0 @@
-package Exercicio3;
-
-public class Principal {
-
-	public static void main(String[] args) {
-		Fornecedor fornecedor = new Fornecedor(null, null, null, 0, 0);
-	}
-
-}
