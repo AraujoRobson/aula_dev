@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="atividade3.Produto"/>
-    <fullyQualifiedTypeName name="atividade2.Elevador"/>
-    <fullyQualifiedTypeName name="heranca.JogoTabuleiro"/>
-    <fullyQualifiedTypeName name="heranca.Jogo"/>
-    <fullyQualifiedTypeName name="heranca.JogoCartas"/>
-    <fullyQualifiedTypeName name="heranca.JogoDados"/>
-    <fullyQualifiedTypeName name="heranca.JogoAbstrato"/>
-    <fullyQualifiedTypeName name="atividade1.IngressoVIP"/>
-    <fullyQualifiedTypeName name="atividade1.Ingresso"/>
     <fullyQualifiedTypeName name="atividade2.Universidade"/>
     <fullyQualifiedTypeName name="atividade2.Tecnico"/>
     <fullyQualifiedTypeName name="atividade1.Empregado"/>
@@ -59,5 +50,14 @@
     <fullyQualifiedTypeName name="atividade.polimorfismo3.Horista"/>
     <fullyQualifiedTypeName name="atividade.polimorfismo2.Registros"/>
     <fullyQualifiedTypeName name="model.Aluno"/>
+    <fullyQualifiedTypeName name="exercicios.lista1.Atividade1"/>
+    <fullyQualifiedTypeName name="exercicios.lista1.Atividade2"/>
+    <fullyQualifiedTypeName name="exercicios.lista1.Atividade3"/>
+    <fullyQualifiedTypeName name="exercicios.lista1.Atividade4"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="exercicios.lista1.Atividade5"/>
+    <fullyQualifiedTypeName name="exercicios.lista1.Atividade6"/>
+    <fullyQualifiedTypeName name="exercicios.lista1.Atividade7"/>
+    <fullyQualifiedTypeName name="exercicios.lista1.Atividade8"/>
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 </qualifiedTypeNameHistroy>
