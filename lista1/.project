@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>lista1</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/imgs/broom-win11-color.png</name>
+			<type>1</type>
+			<location>H:/Users/Robson Araujo/Downloads/icons/limpar/broom-win11-color.png</location>
+		</link>
+		<link>
+			<name>src/imgs/exit-win11-color.png</name>
+			<type>1</type>
+			<location>H:/Users/Robson Araujo/Downloads/icons/sair/exit-win11-color.png</location>
+		</link>
+	</linkedResources>
+</projectDescription>
