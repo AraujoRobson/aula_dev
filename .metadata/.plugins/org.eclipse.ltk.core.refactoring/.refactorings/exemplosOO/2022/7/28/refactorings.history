@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;jt&apos; in &apos;heranca.Principal.main(...)&apos; to &apos;tabuleiro&apos;&#x0D;&#x0A;- Original project: &apos;exemplosOO&apos;&#x0D;&#x0A;- Original element: &apos;heranca.Principal.main(String[]).jt&apos;&#x0D;&#x0A;- Renamed element: &apos;jt&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;jt&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;heranca{Principal.java[Principal~main~\[QString;@jt!95!133!109!110!QJogoTabuleiro;!0!false" name="tabuleiro" references="true" stamp="1657235980721" version="1.0"/>
-</session>
