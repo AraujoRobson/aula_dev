@@ -82,6 +82,7 @@ public class ViewCalculadora {
 		lblOperacao.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JButton btnSomar = new JButton("");
+		btnSomar.setFont(new Font("Verdana", Font.BOLD, 30));
 		btnSomar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lblOperacao.setText("+");
@@ -101,6 +102,7 @@ public class ViewCalculadora {
 		frmCalculadora.getContentPane().add(btnSomar);
 		
 		JButton btnSubtrair = new JButton("");
+		btnSubtrair.setFont(new Font("Verdana", Font.BOLD, 30));
 		btnSubtrair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lblOperacao.setText("-");
@@ -139,6 +141,7 @@ public class ViewCalculadora {
 		frmCalculadora.getContentPane().add(btnDividir);
 		
 		JButton btnMultiplicar = new JButton("");
+		btnMultiplicar.setFont(new Font("Verdana", Font.BOLD, 30));
 		btnMultiplicar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				lblOperacao.setText("*");
@@ -191,7 +194,7 @@ public class ViewCalculadora {
 				numero1 = 0;
 			}
 		});
-		btnLimpar.setIcon(new ImageIcon(ViewCalculadora.class.getResource("/imgs/broom-win11-color.png")));
+		btnLimpar.setIcon(new ImageIcon(ViewCalculadora.class.getResource("/imgs/icons8-broom-30.png")));
 		btnLimpar.setBounds(148, 245, 128, 89);
 		frmCalculadora.getContentPane().add(btnLimpar);
 		
@@ -220,7 +223,7 @@ public class ViewCalculadora {
 					txtNumeros.setText(null);
 					lblNumero1.setText(null);
 				}else {
-					JOptionPane.showMessageDialog(null, "Nenhuma Operação Foi Selecionada!");
+					JOptionPane.showMessageDialog(null, "Nenhuma Operacao Foi Selecionada!");
 				}
 				
 				
