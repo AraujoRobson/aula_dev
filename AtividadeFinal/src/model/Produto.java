@@ -21,7 +21,7 @@ public class Produto {
 		return this.preco;
 	}
 	public String getNome() {
-		return this.getNome();
+		return nome;
 	}
 	public void setPreco(double preco) {
 		this.preco = preco;

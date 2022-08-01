@@ -7,8 +7,9 @@ public class Principal {
 	public static void main(String[] args) {
 		int escolhaItem = 0, qtdDesejada = 0;
 		Scanner scan = new Scanner(System.in);
+		Pagamento pag = new Pagamento();
 		Venda venda = new Venda();
-		Produto goiabinha = new Produto("Goiabinha", 5.5, 10);
+		Produto goiabinha = new Produto("Goiaba", 5.5, 10);
 		Produto cafe = new Produto("Cafe", 25.8, 50);
 		Produto carne = new Produto("Carne", 55.75, 20);
 		Produto alface = new Produto("Alface", 1.99, 14);
@@ -17,7 +18,7 @@ public class Principal {
 		System.out.println("Lista de itens\nQual item deseja adicionar no carrinho?");
 		do {
 			System.out.println("0 - Para sair!");
-			System.out.println("1 - Goiabinha\n2 - Cafe\n3 - Carne\n4 - Alface\n5 - Pao");
+			System.out.println("1 - Goiaba\n2 - Cafe\n3 - Carne\n4 - Alface\n5 - Pao");
 			escolhaItem = scan.nextInt();
 			switch (escolhaItem) {
 				case 1:
@@ -48,13 +49,13 @@ public class Principal {
 			}
 		}while (escolhaItem != 0);
 		
-		
-		//venda.visualizarVenda();
+		System.out.println(venda.visualizarVenda());
+	
 		
 		System.out.println("Informe a forma de pagamento: ");
 		System.out.println("1 - para Dinheiro\n2 - Para Cheque\n3 - Cartão");
 		int formaPgmto = scan.nextInt();
-		
+		pag.setTipoPagamento(formaPgmto);
+		System.out.println(venda.concluirVenda(pag));
 	}
-
 }

@@ -4,21 +4,19 @@ public class Pagamento {
 	private int tipoPagamento;
 	private String formapgmto;
 	
-	public void selecionarTipoPagamento(int pag) {
-		this.tipoPagamento = pag;
-		switch (this.tipoPagamento){
-			case 1:
-				formapgmto = "dinheiro";
-				break;
-			case 2:
-				formapgmto = "cheque";
-				break;
-			case 3:
-				formapgmto = "cartão";
-				break;
+	
+	public String selecionarTipoPagamento() {
+		if(tipoPagamento == 1) {
+			return "Dinheiro!";
+		}else if(tipoPagamento == 2) {
+			return "Cheque!";
 		}
+		return "Cartão!";
 	}
 	public String realizarPagamento() {
-		return String.format("Forma de pagamento: %s\nEfetuado com sucesso!", this.formapgmto);
+		return String.format("Forma de pagamento: %s\nEfetuado com sucesso!", selecionarTipoPagamento());
+	}
+	public void setTipoPagamento(int tipo) {
+		this.tipoPagamento = tipo;
 	}
 }
