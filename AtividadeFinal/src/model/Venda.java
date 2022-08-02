@@ -2,19 +2,21 @@ package model;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class Venda {
 	private double vlrTotal = 0;
 	private String itens = "";
 	ArrayList<Produto> listaVenda = new ArrayList<>();
-	//ArrayList<String> itens = new ArrayList<>();
 	
 	public void addItemVenda(Produto produto, int qtdParaVenda) {
 		if(produto.verificarEstoque(produto, qtdParaVenda)) {
 			for(int i = 0; i < qtdParaVenda; i++) {
 				listaVenda.add(produto);
-			}			
+			}
+			produto.setPreco((produto.getQtdEstoque() - qtdParaVenda));
 		}else {
-			System.out.println("Estoque insuficiente.");
+			JOptionPane.showMessageDialog(null, "Estoque insuficiente!");
 		}
 	}
 	

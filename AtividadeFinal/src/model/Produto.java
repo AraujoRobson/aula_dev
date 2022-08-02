@@ -18,12 +18,19 @@ public class Produto {
 	}
 	
 	public double getPreco() {
-		return this.preco;
+		return preco;
 	}
 	public String getNome() {
 		return nome;
 	}
+	public int getQtdEstoque() {
+		return qtdEstoque;
+	}
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
+	public void setQtdEstoque(int qtd) {
+		this.qtdEstoque = qtd;
+	}
+	
 }
