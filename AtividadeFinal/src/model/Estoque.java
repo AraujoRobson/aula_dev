@@ -2,8 +2,6 @@ package model;
 
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-
 public class Estoque {
 	ArrayList<Produto> estoque = new ArrayList<>();
 	
@@ -26,5 +24,4 @@ public class Estoque {
         }
         return lista;
     }
-	
 }
