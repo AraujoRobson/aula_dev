@@ -21,7 +21,6 @@ public class Venda {
 			JOptionPane.showMessageDialog(null, "Estoque insuficiente!");
 		}
 	}
-	
 	public String visualizarVenda() {
 		for(int i = 0; i < listaVenda.size(); i++) {
 			itens = String.format("%s\n%s		R$%.2f", itens,listaVenda.get(i).getNome(),listaVenda.get(i).getPreco());
@@ -29,13 +28,10 @@ public class Venda {
 		}
 		return String.format("\n%s\nValor total: R$%.2f", itens , vlrTotal);
 	}
-	
 	public double valorVenda() {
 		return vlrTotal;
 	}
-	
 	public String concluirVenda(Pagamento pag) {
-		
 		return String.format("Valor total: R$%.2f\n%s", vlrTotal, pag.realizarPagamento());
 	}
 }
