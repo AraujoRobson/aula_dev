@@ -171,20 +171,41 @@ public class MiniMercado {
 		lblNewLabel_1_3.setFont(new Font("Dialog", Font.PLAIN, 12));
 		panel_1.add(lblNewLabel_1_3);
 		
+		JRadioButton rdbtnPix = new JRadioButton("Pix");
+		JRadioButton rdbtnCartao = new JRadioButton("Cartao");
 		JRadioButton rdbtnDinheiro = new JRadioButton("Dinheiro");
+		rdbtnDinheiro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rdbtnDinheiro.setSelected(true);
+				rdbtnPix.setSelected(false);
+				rdbtnCartao.setSelected(false);
+			}
+		});
 		rdbtnDinheiro.setFont(new Font("Dialog", Font.PLAIN, 12));
 		rdbtnDinheiro.setBounds(20, 27, 83, 21);
 		panel_1.add(rdbtnDinheiro);
 		
-		JRadioButton rdbtnPix = new JRadioButton("Pix");
+		rdbtnPix.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rdbtnPix.setSelected(true);
+				rdbtnDinheiro.setSelected(false);
+				rdbtnCartao.setSelected(false);
+			}
+		});
 		rdbtnPix.setFont(new Font("Dialog", Font.PLAIN, 12));
 		rdbtnPix.setBounds(20, 50, 83, 21);
 		panel_1.add(rdbtnPix);
 		
-		JRadioButton rdbtnDinheiro_1_1 = new JRadioButton("Cartao");
-		rdbtnDinheiro_1_1.setFont(new Font("Dialog", Font.PLAIN, 12));
-		rdbtnDinheiro_1_1.setBounds(20, 73, 83, 21);
-		panel_1.add(rdbtnDinheiro_1_1);
+		rdbtnCartao.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				rdbtnCartao.setSelected(true);
+				rdbtnDinheiro.setSelected(false);
+				rdbtnPix.setSelected(false);
+			}
+		});
+		rdbtnCartao.setFont(new Font("Dialog", Font.PLAIN, 12));
+		rdbtnCartao.setBounds(20, 73, 83, 21);
+		panel_1.add(rdbtnCartao);
 		
 		JLabel lblQtdEstoque_1 = new JLabel("Lista Estoque");
 		lblQtdEstoque_1.setHorizontalAlignment(SwingConstants.CENTER);
