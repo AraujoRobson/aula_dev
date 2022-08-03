@@ -2,11 +2,25 @@ package model;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class Estoque {
 	ArrayList<Produto> estoque = new ArrayList<>();
 	
 	public void incluirItem(Produto produto) {
 		estoque.add(produto);
+	}
+	public int qtdEstoque(int index) {
+		return estoque.get(index).getQtdEstoque();
+	}
+	public boolean verificarEstoque(Produto produto, int qtdParaVenda) {
+		if(produto.getQtdEstoque() >= qtdParaVenda) {
+			return true;
+		}
+		return false;
+	}
+	public Produto produto(int index) {
+		return estoque.get(index);
 	}
 	
 	public String visualizarEstoque() {
@@ -24,4 +38,7 @@ public class Estoque {
         }
         return lista;
     }
+	public void apagar() {
+		estoque.clear();
+	}
 }

@@ -18,6 +18,7 @@ import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 
 import model.Estoque;
+import model.Pagamento;
 import model.Produto;
 import model.Venda;
 
@@ -38,6 +39,7 @@ public class MiniMercado {
 	private Estoque estoque;
 	private Venda venda;
 	private Produto produto;
+	private Pagamento pagamento;
 
 	/**
 	 * Launch the application.
@@ -62,6 +64,7 @@ public class MiniMercado {
 		estoque = new Estoque();
 		venda = new Venda();
 		produto = new Produto();
+		pagamento = new Pagamento();
 		initialize();
 	}
 
@@ -175,11 +178,13 @@ public class MiniMercado {
 		JRadioButton rdbtnPix = new JRadioButton("Pix");
 		JRadioButton rdbtnCartao = new JRadioButton("Cartao");
 		JRadioButton rdbtnDinheiro = new JRadioButton("Dinheiro");
+		rdbtnDinheiro.setSelected(true);
 		rdbtnDinheiro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				rdbtnDinheiro.setSelected(true);
 				rdbtnPix.setSelected(false);
 				rdbtnCartao.setSelected(false);
+				pagamento.setTipoPagamento("dinheiro");
 			}
 		});
 		rdbtnDinheiro.setFont(new Font("Dialog", Font.PLAIN, 12));
@@ -191,6 +196,7 @@ public class MiniMercado {
 				rdbtnPix.setSelected(true);
 				rdbtnDinheiro.setSelected(false);
 				rdbtnCartao.setSelected(false);
+				pagamento.setTipoPagamento("pix");
 			}
 		});
 		rdbtnPix.setFont(new Font("Dialog", Font.PLAIN, 12));
@@ -202,6 +208,7 @@ public class MiniMercado {
 				rdbtnCartao.setSelected(true);
 				rdbtnDinheiro.setSelected(false);
 				rdbtnPix.setSelected(false);
+				pagamento.setTipoPagamento("cartao");
 			}
 		});
 		rdbtnCartao.setFont(new Font("Dialog", Font.PLAIN, 12));
@@ -219,7 +226,7 @@ public class MiniMercado {
 		lblNewLabel_1_3_1.setBounds(10, 0, 151, 16);
 		panel_2.add(lblNewLabel_1_3_1);
 		
-		JLabel lblVlrTotal = new JLabel("R$ 1500,00");
+		JLabel lblVlrTotal = new JLabel("R$ 0,00");
 		lblVlrTotal.setHorizontalAlignment(SwingConstants.CENTER);
 		lblVlrTotal.setFont(new Font("Dialog", Font.PLAIN, 25));
 		lblVlrTotal.setBounds(10, 26, 151, 58);
@@ -294,7 +301,7 @@ public class MiniMercado {
 				if(Integer.parseInt(txtCarrinhoQtd.getText()) < 21 && venda.limitarCarrinho()) {
 					venda.addItemVenda(estoque.produto(cboEstoque.getSelectedIndex()), Integer.parseInt(txtCarrinhoQtd.getText()));
 					txtCarrinhodeCompra.setText(venda.visualizarVenda());
-					lblVlrTotal.setText(String.format("R$ %.2f", Double.toString(venda.valorVenda())));
+					lblVlrTotal.setText(String.format("R$ %.2f", venda.valorVenda()));
 				}else {
 					JOptionPane.showMessageDialog(null, "Quantidade maxima por carrinho é 20.");
 				}
@@ -319,7 +326,7 @@ public class MiniMercado {
 		JButton btnEfetuarVenda = new JButton("Efetuar Venda");
 		btnEfetuarVenda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				txtMostraVenda.setText(pagamento.realizarPagamento());
 			}
 		});
 		btnEfetuarVenda.setFont(new Font("Dialog", Font.PLAIN, 12));
