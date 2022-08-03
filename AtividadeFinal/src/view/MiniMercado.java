@@ -113,10 +113,10 @@ public class MiniMercado {
 		tabbedPane.addTab("Carrinho de Compra", null, pnlVenda, null);
 		pnlVenda.setLayout(null);
 		
-		JComboBox cmbEstoque = new JComboBox();
-		cmbEstoque.setFont(new Font("Source Code Pro", Font.PLAIN, 12));
-		cmbEstoque.setBounds(22, 30, 188, 28);
-		pnlVenda.add(cmbEstoque);
+		JComboBox cboEstoque = new JComboBox();
+		cboEstoque.setFont(new Font("Source Code Pro", Font.PLAIN, 12));
+		cboEstoque.setBounds(22, 30, 188, 28);
+		pnlVenda.add(cboEstoque);
 		
 		txtCarrinhoQtd = new JTextField();
 		txtCarrinhoQtd.setBounds(220, 30, 86, 28);
@@ -184,7 +184,7 @@ public class MiniMercado {
 				txtCadastroDescricao.setText(null);
 				txtCadastroPreco.setText(null);
 				txtCadastroQtdEstoque.setText(null);
-				cmbEstoque.setModel(new DefaultComboBoxModel(estoque.nomes()));
+				cboEstoque.setModel(new DefaultComboBoxModel(estoque.nomes()));
 			}
 		});
 		btnCadastroNovoItem.setFont(new Font("Source Code Pro", Font.PLAIN, 12));
