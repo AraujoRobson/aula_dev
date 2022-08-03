@@ -25,6 +25,8 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.Color;
 import javax.swing.AbstractListModel;
 import javax.swing.JRadioButton;
+import javax.swing.UIManager;
+import java.awt.SystemColor;
 
 public class MiniMercado {
 
@@ -223,12 +225,8 @@ public class MiniMercado {
 		lblVlrTotal.setBounds(10, 26, 151, 58);
 		panel_2.add(lblVlrTotal);
 		
-		JButton btnEfetuarVenda = new JButton("Efetuar Venda");
-		btnEfetuarVenda.setFont(new Font("Dialog", Font.PLAIN, 12));
-		btnEfetuarVenda.setBounds(10, 129, 365, 33);
-		panel.add(btnEfetuarVenda);
-		
 		JLabel lblVolteSempre = new JLabel("Volte Sempre!");
+		lblVolteSempre.setBackground(new Color(240, 240, 240));
 		lblVolteSempre.setHorizontalAlignment(SwingConstants.CENTER);
 		lblVolteSempre.setFont(new Font("Dialog", Font.PLAIN, 25));
 		lblVolteSempre.setBounds(0, 508, 385, 58);
@@ -239,10 +237,12 @@ public class MiniMercado {
 		panel.add(panel_3);
 		panel_3.setLayout(null);
 		
-		JTextPane textPane = new JTextPane();
-		textPane.setBackground(Color.LIGHT_GRAY);
-		textPane.setBounds(10, 10, 324, 290);
-		panel_3.add(textPane);
+		JTextPane txtMostraVenda = new JTextPane();
+		txtMostraVenda.setEditable(false);
+		txtMostraVenda.setFont(new Font("Dialog", Font.PLAIN, 15));
+		txtMostraVenda.setBackground(UIManager.getColor("Button.light"));
+		txtMostraVenda.setBounds(10, 10, 324, 290);
+		panel_3.add(txtMostraVenda);
 		
 		JLabel lblQtdEstoque_1 = new JLabel("Lista Estoque");
 		lblQtdEstoque_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -294,6 +294,7 @@ public class MiniMercado {
 				if(Integer.parseInt(txtCarrinhoQtd.getText()) < 21 && venda.limitarCarrinho()) {
 					venda.addItemVenda(estoque.produto(cboEstoque.getSelectedIndex()), Integer.parseInt(txtCarrinhoQtd.getText()));
 					txtCarrinhodeCompra.setText(venda.visualizarVenda());
+					lblVlrTotal.setText(String.format("R$ %.2f", Double.toString(venda.valorVenda())));
 				}else {
 					JOptionPane.showMessageDialog(null, "Quantidade maxima por carrinho é 20.");
 				}
@@ -314,5 +315,15 @@ public class MiniMercado {
 		btnEsvaziarCarrinho.setFont(new Font("Dialog", Font.PLAIN, 12));
 		btnEsvaziarCarrinho.setBounds(22, 523, 335, 33);
 		pnlVenda.add(btnEsvaziarCarrinho);
+		
+		JButton btnEfetuarVenda = new JButton("Efetuar Venda");
+		btnEfetuarVenda.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		btnEfetuarVenda.setFont(new Font("Dialog", Font.PLAIN, 12));
+		btnEfetuarVenda.setBounds(10, 129, 365, 33);
+		panel.add(btnEfetuarVenda);
 	}
 }
