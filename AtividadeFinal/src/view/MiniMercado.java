@@ -184,7 +184,7 @@ public class MiniMercado {
 				txtCadastroDescricao.setText(null);
 				txtCadastroPreco.setText(null);
 				txtCadastroQtdEstoque.setText(null);
-				cmbEstoque.setModel(new DefaultComboBoxModel(estoque.nomes()));
+				cmbEstoque.setModel(new DefaultComboBoxModel());
 			}
 		});
 		btnCadastroNovoItem.setFont(new Font("Source Code Pro", Font.PLAIN, 12));
