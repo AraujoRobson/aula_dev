@@ -7,15 +7,8 @@ import javax.swing.JOptionPane;
 public class Estoque {
 	ArrayList<Produto> estoque = new ArrayList<>();
 	
-	public void addItem(Produto produto, int qtdParaVenda) {
-		if(produto.verificarEstoque(produto, qtdParaVenda)) {
-			for(int i = 0; i < qtdParaVenda; i++) {
-				estoque.add(produto);
-			}
-			produto.setPreco((produto.getQtdEstoque() - qtdParaVenda));
-		}else {
-			JOptionPane.showMessageDialog(null, "Estoque insuficiente!");
-		}
+	public void incluirItem(Produto produto) {
+		estoque.add(produto);
 	}
 	
 	public String visualizarEstoque() {
