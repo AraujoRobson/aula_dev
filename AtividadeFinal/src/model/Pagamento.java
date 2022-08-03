@@ -1,22 +1,21 @@
 package model;
 
 public class Pagamento {
-	private int tipoPagamento;
-	private String formapgmto;
+	private String tipoPagamento, formapgmto;
 	
 	
 	public String selecionarTipoPagamento() {
-		if(tipoPagamento == 1) {
+		if(tipoPagamento == "dinheiro") {
 			return "Dinheiro!";
-		}else if(tipoPagamento == 2) {
-			return "Cheque!";
+		}else if(tipoPagamento == "pix") {
+			return "Pix!";
 		}
 		return "Cartão!";
 	}
 	public String realizarPagamento() {
 		return String.format("Forma de pagamento: %s\nEfetuado com sucesso!", selecionarTipoPagamento());
 	}
-	public void setTipoPagamento(int tipo) {
+	public void setTipoPagamento(String tipo) {
 		this.tipoPagamento = tipo;
 	}
 }
