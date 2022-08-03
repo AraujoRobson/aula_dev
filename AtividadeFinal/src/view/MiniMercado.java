@@ -22,6 +22,7 @@ import model.Venda;
 
 import javax.swing.DefaultComboBoxModel;
 import java.awt.Color;
+import javax.swing.AbstractListModel;
 
 public class MiniMercado {
 
@@ -204,9 +205,9 @@ public class MiniMercado {
 		JButton btnCarrinhoAdicionar = new JButton("+");
 		btnCarrinhoAdicionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				txtCarrinhodeCompra.setText(venda.visualizarVenda());
 				venda.addItemVenda(estoque.produto(cboEstoque.getSelectedIndex()), Integer.parseInt(txtCarrinhoQtd.getText()));
-				
+				txtCarrinhodeCompra.setText(venda.visualizarVenda());
+				btnCarrinhoAdicionar.setEnabled(venda.limitarCarrinho());
 			}
 		});
 		btnCarrinhoAdicionar.setFont(new Font("Arial Black", Font.BOLD, 13));
@@ -218,6 +219,8 @@ public class MiniMercado {
 			public void actionPerformed(ActionEvent e) {
 				txtCarrinhodeCompra.setText(null);
 				txtCarrinhoQtd.setText(null);
+				btnCarrinhoAdicionar.setEnabled(true);
+				venda.apagaLista();
 			}
 		});
 		btnEsvaziarCarrinho.setFont(new Font("Dialog", Font.PLAIN, 12));
