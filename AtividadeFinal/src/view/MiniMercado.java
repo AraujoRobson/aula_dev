@@ -10,6 +10,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
@@ -205,9 +206,13 @@ public class MiniMercado {
 		JButton btnCarrinhoAdicionar = new JButton("+");
 		btnCarrinhoAdicionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				venda.addItemVenda(estoque.produto(cboEstoque.getSelectedIndex()), Integer.parseInt(txtCarrinhoQtd.getText()));
-				txtCarrinhodeCompra.setText(venda.visualizarVenda());
-				btnCarrinhoAdicionar.setEnabled(venda.limitarCarrinho());
+				if(Integer.parseInt(txtCarrinhoQtd.getText()) < 21 && venda.limitarCarrinho()) {
+					venda.addItemVenda(estoque.produto(cboEstoque.getSelectedIndex()), Integer.parseInt(txtCarrinhoQtd.getText()));
+					txtCarrinhodeCompra.setText(venda.visualizarVenda());
+					btnCarrinhoAdicionar.setEnabled(venda.limitarCarrinho());
+				}else {
+					JOptionPane.showMessageDialog(null, "Quantidade maxima por carrinho é 20.");
+				}
 			}
 		});
 		btnCarrinhoAdicionar.setFont(new Font("Arial Black", Font.BOLD, 13));
