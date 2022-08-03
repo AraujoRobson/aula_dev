@@ -22,6 +22,8 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
 import javax.swing.JList;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MiniMercado {
 
@@ -79,7 +81,7 @@ public class MiniMercado {
 		pnlAddEstoque.add(txtCadastroDescricao);
 		txtCadastroDescricao.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("Descrição:");
+		JLabel lblNewLabel = new JLabel("Descricao:");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Source Code Pro", Font.PLAIN, 12));
 		lblNewLabel.setBounds(26, 11, 98, 28);
@@ -108,11 +110,6 @@ public class MiniMercado {
 		txtCadastroQtdEstoque.setColumns(10);
 		txtCadastroQtdEstoque.setBounds(134, 92, 171, 28);
 		pnlAddEstoque.add(txtCadastroQtdEstoque);
-		
-		JButton btnCadastroNovoItem = new JButton("+ Cadastrar item");
-		btnCadastroNovoItem.setFont(new Font("Source Code Pro", Font.PLAIN, 12));
-		btnCadastroNovoItem.setBounds(134, 131, 171, 38);
-		pnlAddEstoque.add(btnCadastroNovoItem);
 		
 		JPanel pnlVenda = new JPanel();
 		tabbedPane.addTab("Carrinho de Compra", null, pnlVenda, null);
@@ -156,5 +153,21 @@ public class MiniMercado {
 		JPanel panel = new JPanel();
 		tabbedPane.addTab("Concluir Venda", null, panel, null);
 		panel.setLayout(null);
+		
+		JButton btnCadastroNovoItem = new JButton("+ Cadastrar item");
+		btnCadastroNovoItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		btnCadastroNovoItem.setFont(new Font("Source Code Pro", Font.PLAIN, 12));
+		btnCadastroNovoItem.setBounds(134, 131, 171, 38);
+		pnlAddEstoque.add(btnCadastroNovoItem);
+		
+		JLabel lblQtdEstoque_1 = new JLabel("Qtd Estoque:");
+		lblQtdEstoque_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblQtdEstoque_1.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblQtdEstoque_1.setBounds(26, 192, 98, 28);
+		pnlAddEstoque.add(lblQtdEstoque_1);
 	}
 }
