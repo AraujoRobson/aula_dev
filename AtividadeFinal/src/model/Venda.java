@@ -7,10 +7,12 @@ import javax.swing.JOptionPane;
 public class Venda {
 	private double vlrTotal = 0;
 	private String itens = "";
+	Estoque estoque = new Estoque();
+	
 	ArrayList<Produto> listaVenda = new ArrayList<>();
 	
 	public void addItemVenda(Produto produto, int qtdParaVenda) {
-		if(produto.verificarEstoque(produto, qtdParaVenda)) {
+		if(estoque.verificarEstoque(produto, qtdParaVenda)) {
 			for(int i = 0; i < qtdParaVenda; i++) {
 				listaVenda.add(produto);
 			}
