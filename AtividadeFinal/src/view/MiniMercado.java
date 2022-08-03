@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 
+import model.Estoque;
 import model.Produto;
 import javax.swing.DefaultComboBoxModel;
 
@@ -26,7 +27,8 @@ public class MiniMercado {
 	private JTextField txtCadastroPreco;
 	private JTextField txtCadastroQtdEstoque;
 	private JTextField txtCarrinhoQtd;
-	private Produto estoque;
+	//private Produto estoque;
+	private Estoque estoque;
 
 	/**
 	 * Launch the application.
@@ -48,7 +50,7 @@ public class MiniMercado {
 	 * Create the application.
 	 */
 	public MiniMercado() {
-		estoque = new Produto();
+		estoque = new Estoque();
 		initialize();
 	}
 
@@ -177,12 +179,12 @@ public class MiniMercado {
 				
 				Produto itens = new Produto(txtCadastroDescricao.getText(), vlr, qtd);
 				
-				estoque.incluirEstoque(itens);
+				estoque.incluirItem(itens);
 				txtListaEstoque.setText(estoque.visualizarEstoque());
 				txtCadastroDescricao.setText(null);
 				txtCadastroPreco.setText(null);
 				txtCadastroQtdEstoque.setText(null);
-				cmbEstoque.setModel(new DefaultComboBoxModel());
+				cmbEstoque.setModel(new DefaultComboBoxModel(estoque.nomes()));
 			}
 		});
 		btnCadastroNovoItem.setFont(new Font("Source Code Pro", Font.PLAIN, 12));
