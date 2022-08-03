@@ -26,6 +26,7 @@ public class MiniMercado {
 	private JTextField txtCadastroPreco;
 	private JTextField txtCadastroQtdEstoque;
 	private JTextField txtCarrinhoQtd;
+	private Produto estoque;
 
 	/**
 	 * Launch the application.
@@ -47,6 +48,7 @@ public class MiniMercado {
 	 * Create the application.
 	 */
 	public MiniMercado() {
+		estoque = new Produto();
 		initialize();
 	}
 
@@ -60,9 +62,6 @@ public class MiniMercado {
 		frmMinimercado.setBounds(100, 100, 426, 651);
 		frmMinimercado.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmMinimercado.getContentPane().setLayout(null);
-		
-		//Produto estoque = new Produto(null, 0, 0) ;
-		Produto estoque = new Produto();
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 11, 390, 593);
@@ -113,7 +112,6 @@ public class MiniMercado {
 		pnlVenda.setLayout(null);
 		
 		JComboBox cmbEstoque = new JComboBox();
-		cmbEstoque.setModel(new DefaultComboBoxModel(new String[] {"teste", "oi"}));
 		cmbEstoque.setFont(new Font("Source Code Pro", Font.PLAIN, 12));
 		cmbEstoque.setBounds(22, 30, 188, 28);
 		pnlVenda.add(cmbEstoque);
@@ -176,12 +174,15 @@ public class MiniMercado {
 			public void actionPerformed(ActionEvent e) {
 				double vlr = Double.parseDouble(txtCadastroPreco.getText()); 
 				int qtd = Integer.parseInt(txtCadastroQtdEstoque.getText());
+				
 				Produto itens = new Produto(txtCadastroDescricao.getText(), vlr, qtd);
+				
 				estoque.incluirEstoque(itens);
 				txtListaEstoque.setText(estoque.visualizarEstoque());
 				txtCadastroDescricao.setText(null);
 				txtCadastroPreco.setText(null);
 				txtCadastroQtdEstoque.setText(null);
+				cmbEstoque.setModel(new DefaultComboBoxModel());
 			}
 		});
 		btnCadastroNovoItem.setFont(new Font("Source Code Pro", Font.PLAIN, 12));
