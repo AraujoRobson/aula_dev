@@ -35,4 +35,10 @@ public class Venda{
 	public String concluirVenda(Pagamento pag) {
 		return String.format("Valor total: R$%.2f\n%s", vlrTotal, pag.realizarPagamento());
 	}
+	public boolean limitarCarrinho() {
+		if(listaVenda.size() >= 20) {
+			return true;
+		}
+		return false;
+	}
 }
