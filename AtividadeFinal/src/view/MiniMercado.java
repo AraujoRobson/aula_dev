@@ -161,13 +161,12 @@ public class MiniMercado {
 		panel.setLayout(null);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(10, 10, 198, 109);
+		panel_1.setBounds(10, 10, 365, 109);
 		panel.add(panel_1);
 		panel_1.setLayout(null);
 		
 		JLabel lblNewLabel_1_3 = new JLabel("Metodo de Pagamento");
-		lblNewLabel_1_3.setBounds(10, 5, 178, 16);
-		lblNewLabel_1_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_3.setBounds(20, 5, 161, 16);
 		lblNewLabel_1_3.setFont(new Font("Dialog", Font.PLAIN, 12));
 		panel_1.add(lblNewLabel_1_3);
 		
@@ -206,6 +205,28 @@ public class MiniMercado {
 		rdbtnCartao.setFont(new Font("Dialog", Font.PLAIN, 12));
 		rdbtnCartao.setBounds(20, 73, 83, 21);
 		panel_1.add(rdbtnCartao);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(Color.WHITE);
+		panel_2.setBounds(184, 5, 171, 94);
+		panel_1.add(panel_2);
+		panel_2.setLayout(null);
+		
+		JLabel lblNewLabel_1_3_1 = new JLabel("Valor Total:");
+		lblNewLabel_1_3_1.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_1_3_1.setBounds(10, 0, 151, 16);
+		panel_2.add(lblNewLabel_1_3_1);
+		
+		JLabel lblVlrTotal = new JLabel("R$ 1500,00");
+		lblVlrTotal.setHorizontalAlignment(SwingConstants.CENTER);
+		lblVlrTotal.setFont(new Font("Dialog", Font.PLAIN, 25));
+		lblVlrTotal.setBounds(10, 26, 151, 58);
+		panel_2.add(lblVlrTotal);
+		
+		JButton btnEfetuarVenda = new JButton("Efetuar Venda");
+		btnEfetuarVenda.setFont(new Font("Dialog", Font.PLAIN, 12));
+		btnEfetuarVenda.setBounds(20, 129, 335, 33);
+		panel.add(btnEfetuarVenda);
 		
 		JLabel lblQtdEstoque_1 = new JLabel("Lista Estoque");
 		lblQtdEstoque_1.setHorizontalAlignment(SwingConstants.CENTER);
