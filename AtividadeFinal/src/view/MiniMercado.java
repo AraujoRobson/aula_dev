@@ -225,8 +225,24 @@ public class MiniMercado {
 		
 		JButton btnEfetuarVenda = new JButton("Efetuar Venda");
 		btnEfetuarVenda.setFont(new Font("Dialog", Font.PLAIN, 12));
-		btnEfetuarVenda.setBounds(20, 129, 335, 33);
+		btnEfetuarVenda.setBounds(10, 129, 365, 33);
 		panel.add(btnEfetuarVenda);
+		
+		JLabel lblVolteSempre = new JLabel("Volte Sempre!");
+		lblVolteSempre.setHorizontalAlignment(SwingConstants.CENTER);
+		lblVolteSempre.setFont(new Font("Dialog", Font.PLAIN, 25));
+		lblVolteSempre.setBounds(0, 508, 385, 58);
+		panel.add(lblVolteSempre);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBounds(20, 172, 344, 310);
+		panel.add(panel_3);
+		panel_3.setLayout(null);
+		
+		JTextPane textPane = new JTextPane();
+		textPane.setBackground(Color.LIGHT_GRAY);
+		textPane.setBounds(10, 10, 324, 290);
+		panel_3.add(textPane);
 		
 		JLabel lblQtdEstoque_1 = new JLabel("Lista Estoque");
 		lblQtdEstoque_1.setHorizontalAlignment(SwingConstants.CENTER);
