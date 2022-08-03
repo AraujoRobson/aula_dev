@@ -1,29 +1,23 @@
 package view;
 
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JComboBox;
-import java.awt.BorderLayout;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JTabbedPane;
-import javax.swing.JInternalFrame;
-import javax.swing.JToolBar;
-import javax.swing.JSplitPane;
-import javax.swing.JToggleButton;
 import java.awt.Font;
-import javax.swing.JScrollPane;
-import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
-import java.awt.Color;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
-import javax.swing.JTextPane;
-import javax.swing.JList;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.SwingConstants;
+
+import model.Produto;
+import javax.swing.DefaultComboBoxModel;
 
 public class MiniMercado {
 
@@ -31,7 +25,7 @@ public class MiniMercado {
 	private JTextField txtCadastroDescricao;
 	private JTextField txtCadastroPreco;
 	private JTextField txtCadastroQtdEstoque;
-	private JTextField textField;
+	private JTextField txtCarrinhoQtd;
 
 	/**
 	 * Launch the application.
@@ -63,12 +57,15 @@ public class MiniMercado {
 		frmMinimercado = new JFrame();
 		frmMinimercado.setTitle("MiniMercado");
 		frmMinimercado.setResizable(false);
-		frmMinimercado.setBounds(100, 100, 426, 586);
+		frmMinimercado.setBounds(100, 100, 426, 651);
 		frmMinimercado.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmMinimercado.getContentPane().setLayout(null);
 		
+		//Produto estoque = new Produto(null, 0, 0) ;
+		Produto estoque = new Produto();
+		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(10, 11, 390, 530);
+		tabbedPane.setBounds(10, 11, 390, 593);
 		frmMinimercado.getContentPane().add(tabbedPane);
 		
 		JPanel pnlAddEstoque = new JPanel();
@@ -115,15 +112,16 @@ public class MiniMercado {
 		tabbedPane.addTab("Carrinho de Compra", null, pnlVenda, null);
 		pnlVenda.setLayout(null);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setFont(new Font("Source Code Pro", Font.PLAIN, 12));
-		comboBox.setBounds(22, 30, 188, 28);
-		pnlVenda.add(comboBox);
+		JComboBox cmbEstoque = new JComboBox();
+		cmbEstoque.setModel(new DefaultComboBoxModel(new String[] {"teste", "oi"}));
+		cmbEstoque.setFont(new Font("Source Code Pro", Font.PLAIN, 12));
+		cmbEstoque.setBounds(22, 30, 188, 28);
+		pnlVenda.add(cmbEstoque);
 		
-		textField = new JTextField();
-		textField.setBounds(220, 30, 86, 28);
-		pnlVenda.add(textField);
-		textField.setColumns(10);
+		txtCarrinhoQtd = new JTextField();
+		txtCarrinhoQtd.setBounds(220, 30, 86, 28);
+		pnlVenda.add(txtCarrinhoQtd);
+		txtCarrinhoQtd.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Produto");
 		lblNewLabel_1.setFont(new Font("Source Code Pro", Font.PLAIN, 12));
@@ -137,37 +135,69 @@ public class MiniMercado {
 		lblNewLabel_1_1.setBounds(220, 11, 86, 14);
 		pnlVenda.add(lblNewLabel_1_1);
 		
-		JButton btnNewButton = new JButton("+");
-		btnNewButton.setFont(new Font("Arial Black", Font.BOLD, 13));
-		btnNewButton.setBounds(312, 28, 45, 33);
-		pnlVenda.add(btnNewButton);
+		JButton btnCarrinhoAdicionar = new JButton("+");
+		btnCarrinhoAdicionar.setFont(new Font("Arial Black", Font.BOLD, 13));
+		btnCarrinhoAdicionar.setBounds(312, 28, 45, 33);
+		pnlVenda.add(btnCarrinhoAdicionar);
 		
-		JList listValor = new JList();
-		listValor.setBounds(220, 79, 137, 412);
-		pnlVenda.add(listValor);
+		JTextPane txtListaEstoque_1 = new JTextPane();
+		txtListaEstoque_1.setFont(new Font("Dialog", Font.PLAIN, 12));
+		txtListaEstoque_1.setBounds(22, 95, 335, 404);
+		pnlVenda.add(txtListaEstoque_1);
 		
-		JList listDescricao = new JList();
-		listDescricao.setBounds(22, 79, 188, 412);
-		pnlVenda.add(listDescricao);
+		JLabel lblNewLabel_1_2 = new JLabel("Carrinho de Compras");
+		lblNewLabel_1_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_2.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_1_2.setBounds(22, 71, 335, 14);
+		pnlVenda.add(lblNewLabel_1_2);
+		
+		JButton btnEsvaziarCarrinho = new JButton("Esvaziar Carrinho");
+		btnEsvaziarCarrinho.setFont(new Font("Dialog", Font.PLAIN, 12));
+		btnEsvaziarCarrinho.setBounds(22, 523, 335, 33);
+		pnlVenda.add(btnEsvaziarCarrinho);
 		
 		JPanel panel = new JPanel();
 		tabbedPane.addTab("Concluir Venda", null, panel, null);
 		panel.setLayout(null);
 		
+		JLabel lblQtdEstoque_1 = new JLabel("Lista Estoque");
+		lblQtdEstoque_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblQtdEstoque_1.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblQtdEstoque_1.setBounds(26, 192, 98, 28);
+		pnlAddEstoque.add(lblQtdEstoque_1);
+		
+		JTextPane txtListaEstoque = new JTextPane();
+		txtListaEstoque.setFont(new Font("Dialog", Font.PLAIN, 12));
+		txtListaEstoque.setBounds(36, 229, 313, 264);
+		pnlAddEstoque.add(txtListaEstoque);
+		
 		JButton btnCadastroNovoItem = new JButton("+ Cadastrar item");
 		btnCadastroNovoItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				double vlr = Double.parseDouble(txtCadastroPreco.getText()); 
+				int qtd = Integer.parseInt(txtCadastroQtdEstoque.getText());
+				Produto itens = new Produto(txtCadastroDescricao.getText(), vlr, qtd);
+				estoque.incluirEstoque(itens);
+				txtListaEstoque.setText(estoque.visualizarEstoque());
+				txtCadastroDescricao.setText(null);
+				txtCadastroPreco.setText(null);
+				txtCadastroQtdEstoque.setText(null);
 			}
 		});
 		btnCadastroNovoItem.setFont(new Font("Source Code Pro", Font.PLAIN, 12));
 		btnCadastroNovoItem.setBounds(134, 131, 171, 38);
 		pnlAddEstoque.add(btnCadastroNovoItem);
 		
-		JLabel lblQtdEstoque_1 = new JLabel("Qtd Estoque:");
-		lblQtdEstoque_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblQtdEstoque_1.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblQtdEstoque_1.setBounds(26, 192, 98, 28);
-		pnlAddEstoque.add(lblQtdEstoque_1);
+		JButton btnApagarEstoque = new JButton("Apagar Estoque");
+		btnApagarEstoque.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				txtListaEstoque.setText("");
+			}
+		});
+		btnApagarEstoque.setFont(new Font("Dialog", Font.PLAIN, 12));
+		btnApagarEstoque.setBounds(36, 501, 313, 38);
+		pnlAddEstoque.add(btnApagarEstoque);
+		
+		
 	}
 }
