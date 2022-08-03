@@ -24,6 +24,7 @@ import model.Venda;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.Color;
 import javax.swing.AbstractListModel;
+import javax.swing.JRadioButton;
 
 public class MiniMercado {
 
@@ -159,6 +160,32 @@ public class MiniMercado {
 		tabbedPane.addTab("Concluir Venda", null, panel, null);
 		panel.setLayout(null);
 		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(10, 10, 198, 109);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel_1_3 = new JLabel("Metodo de Pagamento");
+		lblNewLabel_1_3.setBounds(10, 5, 178, 16);
+		lblNewLabel_1_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_3.setFont(new Font("Dialog", Font.PLAIN, 12));
+		panel_1.add(lblNewLabel_1_3);
+		
+		JRadioButton rdbtnDinheiro = new JRadioButton("Dinheiro");
+		rdbtnDinheiro.setFont(new Font("Dialog", Font.PLAIN, 12));
+		rdbtnDinheiro.setBounds(20, 27, 83, 21);
+		panel_1.add(rdbtnDinheiro);
+		
+		JRadioButton rdbtnPix = new JRadioButton("Pix");
+		rdbtnPix.setFont(new Font("Dialog", Font.PLAIN, 12));
+		rdbtnPix.setBounds(20, 50, 83, 21);
+		panel_1.add(rdbtnPix);
+		
+		JRadioButton rdbtnDinheiro_1_1 = new JRadioButton("Cartao");
+		rdbtnDinheiro_1_1.setFont(new Font("Dialog", Font.PLAIN, 12));
+		rdbtnDinheiro_1_1.setBounds(20, 73, 83, 21);
+		panel_1.add(rdbtnDinheiro_1_1);
+		
 		JLabel lblQtdEstoque_1 = new JLabel("Lista Estoque");
 		lblQtdEstoque_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblQtdEstoque_1.setFont(new Font("Dialog", Font.PLAIN, 12));
@@ -209,7 +236,6 @@ public class MiniMercado {
 				if(Integer.parseInt(txtCarrinhoQtd.getText()) < 21 && venda.limitarCarrinho()) {
 					venda.addItemVenda(estoque.produto(cboEstoque.getSelectedIndex()), Integer.parseInt(txtCarrinhoQtd.getText()));
 					txtCarrinhodeCompra.setText(venda.visualizarVenda());
-					btnCarrinhoAdicionar.setEnabled(venda.limitarCarrinho());
 				}else {
 					JOptionPane.showMessageDialog(null, "Quantidade maxima por carrinho é 20.");
 				}
@@ -224,7 +250,6 @@ public class MiniMercado {
 			public void actionPerformed(ActionEvent e) {
 				txtCarrinhodeCompra.setText(null);
 				txtCarrinhoQtd.setText(null);
-				btnCarrinhoAdicionar.setEnabled(true);
 				venda.apagaLista();
 			}
 		});
