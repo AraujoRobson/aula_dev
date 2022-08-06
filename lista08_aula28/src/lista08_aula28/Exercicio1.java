@@ -10,6 +10,5 @@ public class Exercicio1 {
 		double numDouble = 1234.56;
 		float numFloat = (float) numDouble;
 		System.out.println("float: " + numFloat);
-
 	}
 }
