@@ -30,9 +30,9 @@ public class Pessoa {
 
 	@Override
 	public String toString() {
-		return "Pessoa [nome=" + nome +
-				", telefone=" + telefone +
-				", cpf=" + cpf + "]";
+		return "Nome: " + nome +
+				", telefone:" + telefone +
+				", CPF:" + cpf;
 	}
 
 	public Pessoa(String nome, String telefone, String cpf) {
@@ -45,5 +45,4 @@ public class Pessoa {
 	public Pessoa() {
 		super();
 	}
-
 }

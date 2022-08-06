@@ -13,6 +13,14 @@ public class Camareira extends Pessoa implements ICamareira {
 	}
 
 	@Override
+	public String toString() {
+		return "Camareira\n" +
+				super.toString() +
+				"\n" + arrumarACama() +
+				"\n" + limparQuarto();
+	}
+
+	@Override
 	public String arrumarACama() {
 		return "Lençol arrumado.";
 	}

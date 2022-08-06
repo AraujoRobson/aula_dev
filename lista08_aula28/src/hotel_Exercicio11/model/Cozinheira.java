@@ -13,7 +13,15 @@ public class Cozinheira extends Pessoa implements ICozinheira {
 	}
 
 	@Override
-	public String Cozinhar() {
+	public String toString() {
+		return "Cozinha: \n" +
+				super.toString() +
+				"\n" + cozinhar() +
+				"\n" + arrumarCozinha();
+	}
+
+	@Override
+	public String cozinhar() {
 		return "Cozinhar é arte e eu sou o artista!";
 	}
 

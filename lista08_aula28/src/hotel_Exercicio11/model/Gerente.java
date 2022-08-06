@@ -2,59 +2,69 @@ package hotel_Exercicio11.model;
 
 import hotel_Exercicio11.interfaces.ICamareira;
 import hotel_Exercicio11.interfaces.ICozinheira;
+import hotel_Exercicio11.interfaces.IFazTudo;
 import hotel_Exercicio11.interfaces.IRecepcionista;
 
-public class Gerente extends Pessoa implements IRecepcionista, ICamareira, ICozinheira {
-
+public class Gerente extends Pessoa implements IRecepcionista, ICamareira, ICozinheira, IFazTudo {
 	public Gerente() {
 		super();
-
 	}
 
 	public Gerente(String nome, String telefone, String cpf) {
 		super(nome, telefone, cpf);
-
 	}
 
 	@Override
 	public String toString() {
-		return super.toString() + "Gerente []";
+		return "Gerencia: \n" +
+				super.toString() +
+				"\n" + atender() +
+				"\n" + falarIngles() +
+				"\n" + arrumarACama() +
+				"\n" + limparQuarto() +
+				"\n" + cozinhar() +
+				"\n" + arrumarACama() +
+				"\n" + cafe() +
+				"\n" + limpar() + "\nQuando preciso estou sempre a disposição!";
 	}
 
 	@Override
-	public void atender() {
-		System.out.println("Atendo os clientes mais ou menos...");
-
+	public String atender() {
+		return "Meu atendimento ao hospede não é igual do(a) recepcionista mas cubro quando preciso...";
 	}
 
 	@Override
-	public void falarIngles() {
-		System.out.println("Falo Ingl�s com maestria");
-
+	public String falarIngles() {
+		return "Falo Inglês fluentemente.";
 	}
 
 	@Override
-	public void arrumarACama() {
-		System.out.println("ARRUMO A CAMA mais ou menos");
-
+	public String arrumarACama() {
+		return "Deixo a desejar na função de arrumar a cama.";
 	}
 
 	@Override
-	public void limparQuarto() {
-		System.out.println("Limpo quartos tamb�m");
-
+	public String limparQuarto() {
+		return "Limpo quartos mais ou menos.";
 	}
 
 	@Override
-	public void Cozinhar() {
-		System.out.println("Cozinho tamb�m!");
-
+	public String cozinhar() {
+		return "Cozinho também quando preciso.";
 	}
 
 	@Override
-	public void arrumarCozinha() {
-		System.out.println("Quem cozinha tamb�m limpa, n�?");
-
+	public String arrumarCozinha() {
+		return "Tento deixar organizado, porem, do meu jeito rsrs!";
 	}
 
+	@Override
+	public String cafe() {
+		return "Meu café até que é bom.";
+	}
+
+	@Override
+	public String limpar() {
+		return "Limpar é tranquilo?! né?.";
+	}
 }

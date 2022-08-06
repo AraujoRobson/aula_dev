@@ -1,6 +1,5 @@
 package hotel_Exercicio11;
 
-import hotel_Exercicio11.model.AuxiliarGeral;
 import hotel_Exercicio11.model.Camareira;
 import hotel_Exercicio11.model.Cliente;
 import hotel_Exercicio11.model.Cozinheira;
@@ -11,51 +10,27 @@ import hotel_Exercicio11.model.Recepcionista;
 public class Principal {
 
 	public static void main(String[] args) {
-
-		System.out.println("GERENTE");
-		System.out.println();
-		Gerente gerente = new Gerente("JÉSSICA", "49 99997070", "357.271.390-07");
-		gerente.arrumarACama();
-		gerente.arrumarCozinha();
-		gerente.atender();
-		gerente.Cozinhar();
-		gerente.falarIngles();
-		gerente.limparQuarto();
-		System.out.println();
-
-		System.out.println("RECEPCIONISTA");
-		System.out.println();
-		Recepcionista recepcionista = new Recepcionista("PEDRO", "49 99997070", "911.803.770-44");
-		recepcionista.atender();
-		recepcionista.falarIngles();
-		System.out.println(recepcionista.toString());
-		System.out.println();
-
-		System.out.println("CAMAREIRA");
-		System.out.println();
-		Camareira camareira = new Camareira("LARITNA", "49 99997070", "308.066.740-91");
-		camareira.arrumarACama();
-		System.out.println(camareira.toString());
-		System.out.println();
-
-		System.out.println("COZINHEIRA");
-		System.out.println();
-		Cozinheira cozinheira = new Cozinheira("ROSEVITA", "49 99997070", "178.271.890-75");
-		cozinheira.Cozinhar();
-		cozinheira.arrumarCozinha();
-		System.out.println(cozinheira.toString());
-		System.out.println();
-
-		System.out.println("FAZ TUDO");
-		System.out.println();
-		FazTudo faztudo = new FazTudo("BATISTA", "49 99997070", "689.640.200-81");
-		faztudo.cafe();
-		System.out.println(faztudo.toString());
-		System.out.println();
-
-		System.out.println("CLIENTE");
-		System.out.println();
-		Cliente cliente = new Cliente("ADRIAN", "49 99997070", "689.640.200-81", 32000);
+		Cliente cliente = new Cliente("Robson", "49 970707070", "859.588.120-09", 5000.50);
 		System.out.println(cliente.toString());
+		System.out.println("-----------");
+
+		Camareira camareira = new Camareira("Fatima", "nao informado", "361.530.030-01");
+		System.out.println(camareira.toString());
+		System.out.println("-----------");
+
+		Cozinheira cozinheira = new Cozinheira("Nelsi", "49 970707070", "413.893.330-19");
+		System.out.println(cozinheira.toString());
+		System.out.println("-----------");
+
+		FazTudo fazTudo = new FazTudo("Sevirino", "49 987654923", "992.553.570-00");
+		System.out.println(fazTudo.toString());
+		System.out.println("-----------");
+
+		Gerente gerente = new Gerente("Jéssica", "49 989097070", "247.941.120-68");
+		System.out.println(gerente.toString());
+		System.out.println("-----------");
+
+		Recepcionista recepcionista = new Recepcionista("Pedro", "nao informado", "649.110.850-37");
+		System.out.println(recepcionista.toString());
 	}
 }

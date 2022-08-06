@@ -13,6 +13,13 @@ public class Recepcionista extends Pessoa implements IRecepcionista {
 	}
 
 	@Override
+	public String toString() {
+		return "Recepção:\n" +
+				super.toString() +
+				"\n" + atender() + "\n" + falarIngles();
+	}
+
+	@Override
 	public String atender() {
 		return "A função é recepcionar os hospedes.";
 	}

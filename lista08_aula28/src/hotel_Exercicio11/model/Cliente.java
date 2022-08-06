@@ -14,7 +14,7 @@ public class Cliente extends Pessoa {
 
 	@Override
 	public String toString() {
-		return super.toString() + "Cliente [salario=" + salario + "]";
+		return "Cliente \n" + super.toString() + "\nsalario:" + salario;
 	}
 
 	public Cliente(String nome, String telefone, String cpf, double salario) {

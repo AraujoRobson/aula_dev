@@ -13,6 +13,13 @@ public class FazTudo extends Pessoa implements IFazTudo {
 	}
 
 	@Override
+	public String toString() {
+		return "Faz Tudo:\n" +
+				super.toString() +
+				"\n" + cafe() + "\n" + limpar();
+	}
+
+	@Override
 	public String cafe() {
 		return "Estou indo fazer o café...";
 	}
