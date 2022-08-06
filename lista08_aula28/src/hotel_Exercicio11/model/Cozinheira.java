@@ -6,24 +6,19 @@ public class Cozinheira extends Pessoa implements ICozinheira {
 
 	public Cozinheira() {
 		super();
-
 	}
 
 	public Cozinheira(String nome, String telefone, String cpf) {
 		super(nome, telefone, cpf);
-
 	}
 
 	@Override
-	public void Cozinhar() {
-		System.out.println("COZINHO COM MAESTRIA!");
-
+	public String Cozinhar() {
+		return "Cozinhar é arte e eu sou o artista!";
 	}
 
 	@Override
-	public void arrumarCozinha() {
-		System.out.println("Arrumo a cozinha e deixo ela brilhando!");
-
+	public String arrumarCozinha() {
+		return "Deixo a cozinha organizada para facilitar minha função.";
 	}
-
 }

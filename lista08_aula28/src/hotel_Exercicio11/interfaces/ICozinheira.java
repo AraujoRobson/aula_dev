@@ -1,7 +1,7 @@
 package hotel_Exercicio11.interfaces;
 
 public interface ICozinheira {
-	public void Cozinhar();
+	public String Cozinhar();
 
-	public void arrumarCozinha();
+	public String arrumarCozinha();
 }
