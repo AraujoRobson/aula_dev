@@ -14,7 +14,7 @@ public class Principal {
 
 		System.out.println("GERENTE");
 		System.out.println();
-		Gerente gerente = new Gerente("JÉSSICA", "49 99997070", "548978916");
+		Gerente gerente = new Gerente("JÉSSICA", "49 99997070", "357.271.390-07");
 		gerente.arrumarACama();
 		gerente.arrumarCozinha();
 		gerente.atender();
@@ -25,7 +25,7 @@ public class Principal {
 
 		System.out.println("RECEPCIONISTA");
 		System.out.println();
-		Recepcionista recepcionista = new Recepcionista("PEDRO", "49 99997070", "4868789798789");
+		Recepcionista recepcionista = new Recepcionista("PEDRO", "49 99997070", "911.803.770-44");
 		recepcionista.atender();
 		recepcionista.falarIngles();
 		System.out.println(recepcionista.toString());
@@ -33,14 +33,14 @@ public class Principal {
 
 		System.out.println("CAMAREIRA");
 		System.out.println();
-		Camareira camareira = new Camareira("LARITNA", "49 99997070", "787975678789");
+		Camareira camareira = new Camareira("LARITNA", "49 99997070", "308.066.740-91");
 		camareira.arrumarACama();
 		System.out.println(camareira.toString());
 		System.out.println();
 
 		System.out.println("COZINHEIRA");
 		System.out.println();
-		Cozinheira cozinheira = new Cozinheira("ROSEVITA", "49 99997070", "7954564678");
+		Cozinheira cozinheira = new Cozinheira("ROSEVITA", "49 99997070", "178.271.890-75");
 		cozinheira.Cozinhar();
 		cozinheira.arrumarCozinha();
 		System.out.println(cozinheira.toString());
@@ -48,14 +48,14 @@ public class Principal {
 
 		System.out.println("FAZ TUDO");
 		System.out.println();
-		FazTudo faztudo = new FazTudo("BATISTA", "49 99997070", "45678978979");
+		FazTudo faztudo = new FazTudo("BATISTA", "49 99997070", "689.640.200-81");
 		faztudo.cafe();
 		System.out.println(faztudo.toString());
 		System.out.println();
 
 		System.out.println("CLIENTE");
 		System.out.println();
-		Cliente cliente = new Cliente("ADRIAN", "49 99997070", "10578351960", 32000);
+		Cliente cliente = new Cliente("ADRIAN", "49 99997070", "689.640.200-81", 32000);
 		System.out.println(cliente.toString());
 	}
 }
