@@ -10,7 +10,8 @@ public class Exercicio4 {
         System.out.println("Entre com sua altura: (em metros)");
         float altura = scan.nextFloat();
 
-        float imc = peso * (altura * altura);
+        double imc = peso * (Math.pow(altura, 2));
+
         String resultado;
         if (imc < 18.5) {
             resultado = "Classificação: MAGREZA";
