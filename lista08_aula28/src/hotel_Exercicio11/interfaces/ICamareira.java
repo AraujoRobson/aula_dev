@@ -1,7 +1,7 @@
 package hotel_Exercicio11.interfaces;
 
 public interface ICamareira {
-	public void arrumarACama();
+	public String arrumarACama();
 
-	public void limparQuarto();
+	public String limparQuarto();
 }
