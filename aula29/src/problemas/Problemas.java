@@ -6,11 +6,18 @@ import java.util.Scanner;
 
 public class Problemas {
 	public static void main(String[] args) {
-		int[] arranjo = { 10, 20, 30 };
-		System.out.println("Array:");
-		System.out.println(arranjo[0]);
-		System.out.println(arranjo[3]);
-		// java.lang.ArrayIndexOutOfBoundsException:
+
+		try {
+			int[] arranjo = { 10, 20, 30 };
+			System.out.println("Array:");
+			System.out.println(arranjo[0]);
+			System.out.println(arranjo[3]);
+			// java.lang.ArrayIndexOutOfBoundsException:
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("Erro de acesso ao array");
+		}
+
+		System.out.println("Programa finalizado!");
 
 		ArrayList<Integer> numeros = new ArrayList<>();
 		numeros.add(10);
