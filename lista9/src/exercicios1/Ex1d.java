@@ -22,6 +22,8 @@ public class Ex1d {
         } catch (Exception e) {
             System.out.println("Erro encontrado");
             System.out.println(e.getMessage());
+        } finally {
+            scan.close();
         }
     }
 }
