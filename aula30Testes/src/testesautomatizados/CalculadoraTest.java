@@ -125,4 +125,33 @@ public class CalculadoraTest {
 		int multiplicar = calc.multiplicar(-7, 0);
 		assertEquals(0, multiplicar);
 	}
+
+	// DIVIDIR
+	@Test
+	public void deveriaDividirDoisNumerosPositivos() {
+		Calculadora calc = new Calculadora();
+		int multiplicar = calc.multiplicar(50, 5);
+		assertEquals(10, multiplicar);
+	}
+
+	@Test
+	public void deveriaMultiplicarNumeroPositivoPorNegativo() {
+		Calculadora calc = new Calculadora();
+		int multiplicar = calc.multiplicar(70, -5);
+		assertEquals(-14, multiplicar);
+	}
+
+	@Test
+	public void deveriaMultiplicarNumeroNegativoPorPositivo() {
+		Calculadora calc = new Calculadora();
+		int multiplicar = calc.multiplicar(-70, 5);
+		assertEquals(-14, multiplicar);
+	}
+
+	@Test
+	public void deveriaDividirDoisNumerosNegativos() {
+		Calculadora calc = new Calculadora();
+		int multiplicar = calc.multiplicar(-65, -5);
+		assertEquals(13, multiplicar);
+	}
 }
