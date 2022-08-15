@@ -9,7 +9,7 @@ import dominio.Lance;
 import dominio.Leilao;
 import dominio.Usuario;
 
-public class TestaLeilao {
+public class LeilaoTest {
 	@Test
     public void testarLancesOrdemCrescente() {
 		// Cenário
