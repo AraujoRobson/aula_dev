@@ -89,4 +89,40 @@ public class CalculadoraTest {
 		int subtrair = calc.subtrair(0, -22);
 		assertEquals(22, subtrair);
 	}
+
+	// MULTIPLICACAO
+	@Test
+	public void deveriaMultiplicarDoisNumerosPositivos() {
+		Calculadora calc = new Calculadora();
+		int multiplicar = calc.multiplicar(10, 10);
+		assertEquals(100, multiplicar);
+	}
+
+	@Test
+	public void deveriaMultiplicarNumeroPositivoNumeroNegativo() {
+		Calculadora calc = new Calculadora();
+		int multiplicar = calc.multiplicar(27, -10);
+		assertEquals(-270, multiplicar);
+	}
+
+	@Test
+	public void deveriaMultiplicarDoisNumerosNegativos() {
+		Calculadora calc = new Calculadora();
+		int multiplicar = calc.multiplicar(-27, -18);
+		assertEquals(486, multiplicar);
+	}
+
+	@Test
+	public void deveriaMultiplicarNumeroPositivoPorZero() {
+		Calculadora calc = new Calculadora();
+		int multiplicar = calc.multiplicar(557, 0);
+		assertEquals(0, multiplicar);
+	}
+
+	@Test
+	public void deveriaMultiplicarNumeroNegativoPorZero() {
+		Calculadora calc = new Calculadora();
+		int multiplicar = calc.multiplicar(-7, 0);
+		assertEquals(0, multiplicar);
+	}
 }
