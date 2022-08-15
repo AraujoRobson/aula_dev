@@ -19,9 +19,9 @@ public class LeilaoTest {
 
         Leilao leilao = new Leilao("Playstation 5");
 
+        leilao.propoe(new Lance(joao, 2500.0));
+        leilao.propoe(new Lance(jose, 2500.0));
         leilao.propoe(new Lance(maria, 2500.0));
-        leilao.propoe(new Lance(joao, 3000.0));
-        leilao.propoe(new Lance(jose, 4000.0));
 
         // Ação
         Avaliador avaliador = new Avaliador();
