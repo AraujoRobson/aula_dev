@@ -1,6 +1,6 @@
 package testesautomatizados;
 
-import org.junit.Assert;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import testesmanuais.Calculadora;
@@ -8,34 +8,34 @@ import testesmanuais.Calculadora;
 public class CalculadoraTest {
 	@Test
 	public void deveriaSomarDoisNumerosPositivos() {
-		// Cenário (arrange)
+		// Cenario (arrange)
 		Calculadora calc = new Calculadora();
-		
-		// Execução (act)
+
+		// Execucao (act)
 		int soma = calc.somar(41, 1);
-		
-		// Verificação (assert)
-		Assert.assertEquals(42, soma);
+
+		// Verificacao (assert)
+		assertEquals(42, soma);
 	}
-	
+
 	@Test
 	public void deveriaSomarUmNumeroPositivoComZero() {
 		Calculadora calc = new Calculadora();
 		int soma = calc.somar(10, 0);
-		Assert.assertEquals(10, soma);
+		assertEquals(10, soma);
 	}
 
 	@Test
 	public void deveriaSomarUmNumeroPositivoComNumeroNegativo() {
 		Calculadora calc = new Calculadora();
 		int soma = calc.somar(5, -5);
-		Assert.assertEquals(0, soma);
+		assertEquals(0, soma);
 	}
-	
+
 	@Test
 	public void deveriaSomarDoisNumerosNegativos() {
 		Calculadora calc = new Calculadora();
 		int soma = calc.somar(-2, -3);
-		Assert.assertEquals(-5, soma);
+		assertEquals(-5, soma);
 	}
 }
