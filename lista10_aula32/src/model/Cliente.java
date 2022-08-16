@@ -1,6 +1,10 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Cliente {
+	ArrayList<ContaCorrente> listaConta = new ArrayList<>();
+	
 	private String nome;
 	
 	public Cliente() {
