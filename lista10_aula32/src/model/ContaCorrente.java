@@ -4,9 +4,6 @@ public class ContaCorrente {
 	private Cliente cliente;
 	protected double saldo;
 	
-	public ContaCorrente() {
-	}
-	
 	public ContaCorrente(Cliente cliente, double saldo) {
 		this.cliente = cliente;
 		this.saldo = saldo;
