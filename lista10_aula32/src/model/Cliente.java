@@ -11,11 +11,6 @@ public class Cliente {
 		this.nome = nome;
 	}
 	
-	public Cliente(String nome, double limite) {
-		super();
-		this.nome = nome;
-	}
-	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
