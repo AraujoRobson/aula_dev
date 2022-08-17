@@ -20,15 +20,12 @@ public class ContaCorrente {
 		this.saldo += valor;
 	}
 	
-	public void sacar(double valor) {
+	public double sacar(double valor) {
 		if(verificaSaque(valor)) {
-			this.saldo -= valor;			
+			this.saldo -= valor;	
+			return this.saldo;
 		}else {
-			erroSaque();
+			return this.saldo;
 		}
-	}
-	
-	private String erroSaque() {
-		return "Saque invalido!";
 	}
 }
