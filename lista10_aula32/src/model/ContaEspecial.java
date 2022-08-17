@@ -9,12 +9,12 @@ public class ContaEspecial extends ContaCorrente {
 	}
 	
 	@Override
-	public void sacar(double valor) {
+	public double sacar(double valor) {
 		if(verificaSaque(valor)) {
-			saldo -= valor;
-		}else {
-			super.erroSaque();
+			this.saldo -= valor;
+			return this.saldo;
 		}
+		return this.saldo;
 	}
 	
 	@Override
