@@ -1,13 +1,15 @@
 package model;
 
 public class ContaEspecial extends ContaCorrente {
+	private Cliente cliente;
 	private double limite;
 	
 	public ContaEspecial() {
 	}
 	
-	public ContaEspecial(double saldo, double limite) {
-		super(saldo);
+	public ContaEspecial(Cliente cliente , double saldo, double limite) {
+		this.cliente = cliente;
+		this.saldo = saldo;
 		this.limite = limite;
 	}
 	
