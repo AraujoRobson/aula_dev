@@ -6,8 +6,8 @@ public class ContaEspecial extends ContaCorrente {
 	public ContaEspecial() {
 	}
 	
-	public ContaEspecial(double limite) {
-		super();
+	public ContaEspecial(double saldo, double limite) {
+		super(saldo);
 		this.limite = limite;
 	}
 	
