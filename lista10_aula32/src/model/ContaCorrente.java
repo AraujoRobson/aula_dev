@@ -1,13 +1,14 @@
 package model;
 
 public class ContaCorrente {
+	private Cliente cliente;
 	protected double saldo;
 	
 	public ContaCorrente() {
 	}
 	
-	public ContaCorrente(double saldo) {
-		super();
+	public ContaCorrente(Cliente cliente, double saldo) {
+		this.cliente = cliente;
 		this.saldo = saldo;
 	}
 	
