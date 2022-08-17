@@ -1,5 +1,7 @@
 package testes;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 
 import model.Cliente;
@@ -12,7 +14,8 @@ public class ContasTest {
 	@Test
 	public void testaSaqueCC() {
 		ContaCorrente cc = new ContaCorrente(robson, 1000);
-		
+		double saque = cc.sacar(500);
+		assertEquals(500, saque);
 	}
 	
 	@Test
