@@ -24,8 +24,7 @@ public class ContaCorrente {
 		if(verificaSaque(valor)) {
 			this.saldo -= valor;	
 			return this.saldo;
-		}else {
-			return this.saldo;
 		}
+		return this.saldo;
 	}
 }
