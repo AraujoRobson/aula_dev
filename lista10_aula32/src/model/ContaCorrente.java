@@ -10,14 +10,18 @@ public class ContaCorrente {
 	}
 	
 	public boolean verificaSaque(double valor) {
-		if(this.saldo >= valor) {
+		if(valor > 0 && this.saldo >= valor) {
 			return true;
-		}
+		}		
 		return false;
 	}
 	
-	public void depositar(double valor) {
-		this.saldo += valor;
+	public double depositar(double valor) {
+		if(valor > 0) {
+			this.saldo += valor;
+			return this.saldo;
+		}
+		return this.saldo;
 	}
 	
 	public double sacar(double valor) {

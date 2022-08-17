@@ -19,7 +19,7 @@ public class ContaEspecial extends ContaCorrente {
 	
 	@Override
 	public boolean verificaSaque(double valor) {
-		if((saldo + limite) >= valor) {
+		if(valor > 0 && (saldo + limite) >= valor) {
 			return true;
 		}
 		return false;
