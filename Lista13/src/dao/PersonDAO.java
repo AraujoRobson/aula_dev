@@ -13,10 +13,11 @@ import db.MySQLConnection;
 import model.Person;
 
 public class PersonDAO implements IPersonDAO {
+	private String sql = null;
 	private Connection connection;
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
-	
+		
 	@Override
 	public List<Person> listPeople() {
 		connection = MySQLConnection.getConnection();
@@ -24,7 +25,7 @@ public class PersonDAO implements IPersonDAO {
 		List<Person> list = new ArrayList<>();
 		
 		try {
-			String sql = "SELECT * FROM pessoa";
+			sql = "SELECT * FROM pessoa";
 			stmt = this.connection.prepareStatement(sql);
 			rs = stmt.executeQuery();
 			
@@ -56,7 +57,7 @@ public class PersonDAO implements IPersonDAO {
 	public void add(Person p) {
 		connection = MySQLConnection.getConnection();
 		try { 
-			String sql = "INSERT INTO pessoa (nome_pessoa, data_nascimento, salario)" + 
+			sql = "INSERT INTO pessoa (nome_pessoa, data_nascimento, salario)" + 
 					"VALUES (?, ?, ?);";
 			stmt = this.connection.prepareStatement(sql);
 			
@@ -81,11 +82,11 @@ public class PersonDAO implements IPersonDAO {
 	public void change(Person p) {
 		connection = MySQLConnection.getConnection();
 		try {
-			String sql = "UPDATE pessoa " + 
-							"SET nome_pessoa = ?, " +
-							"data_nascimento = ?, " +
-							"salario = ? " +
-							"WHERE id_pessoa = ?;";
+			sql = "UPDATE pessoa " + 
+					"SET nome_pessoa = ?, " +
+					"data_nascimento = ?, " +
+					"salario = ? " +
+					"WHERE id_pessoa = ?;";
 			
 			stmt = this.connection.prepareStatement(sql);
 			stmt.setString(1, p.getNamePerson());
@@ -96,7 +97,7 @@ public class PersonDAO implements IPersonDAO {
 			
 			stmt.execute();
 		} catch (SQLException e) {
-			
+			throw new RuntimeException(e.getMessage());
 		} finally {
 			MySQLConnection.closeConnection();
 			try { 
@@ -109,6 +110,24 @@ public class PersonDAO implements IPersonDAO {
 
 	@Override
 	public void delete(Integer id) {
+		connection = MySQLConnection.getConnection();
+		try { 
+			sql = "DELETE FROM pessoa "+
+					"WHERE id_pessoa = ?;";
+			stmt = this.connection.prepareStatement(sql);
+			stmt.setInt(1, id);
+			
+			stmt.execute();
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage()); 
+		}finally {
+			MySQLConnection.closeConnection();
+			try { 
+				stmt.close(); 
+			} catch (SQLException e) {
+				e.printStackTrace(); 
+			}
+		}
 	}
 
 

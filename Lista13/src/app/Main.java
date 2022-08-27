@@ -24,7 +24,7 @@ public class Main {
 
 		//dao.add(add_person);
 		//dao.change(add_person);
-		
+		//dao.delete(1);
 		
 		List<Person> list = dao.listPeople();
 		System.out.println("Lista");
