@@ -34,7 +34,9 @@ public class PersonDAO implements IPersonDAO {
 			}
 		}  catch(SQLException e) {
 			throw new RuntimeException(e.getMessage());
-		} 
+		} finally {
+			MySQLConnection.closeConnection();
+		}
 		
 		return null;
 	}
