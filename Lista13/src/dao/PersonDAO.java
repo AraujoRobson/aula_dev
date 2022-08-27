@@ -14,13 +14,13 @@ import model.Person;
 
 public class PersonDAO implements IPersonDAO {
 	private Connection connection;
-	
+	PreparedStatement stmt = null;
+	ResultSet rs = null;
 	
 	@Override
 	public List<Person> listPeople() {
 		connection = MySQLConnection.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
+		
 		List<Person> list = new ArrayList<>();
 		
 		try {
@@ -46,7 +46,6 @@ public class PersonDAO implements IPersonDAO {
 			} catch (SQLException e) {
 				e.printStackTrace(); 
 			}
-			 
 		}
 		
 		return list;
@@ -54,7 +53,26 @@ public class PersonDAO implements IPersonDAO {
 	
 	@Override
 	public void add(Person p) {
-	
+		try { 
+			String sql = "INSERT INTO pessoa (nome_pessoa, data_nascimento, salario)" + 
+					"VALUES (?, ?, ?);";
+			stmt = this.connection.prepareStatement(sql);
+			
+			stmt.setString(1, p.getNamePerson());
+			stmt.setDate(2, p.getBirthDate());
+			stmt.setBigDecimal(3, p.getSalary());
+			
+			stmt.execute();			
+		} catch(SQLException e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			MySQLConnection.closeConnection();
+			try { 
+				stmt.close(); rs.close(); 
+			} catch (SQLException e) {
+				e.printStackTrace(); 
+			}
+		}
 	}
 
 	@Override
