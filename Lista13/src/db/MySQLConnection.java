@@ -11,7 +11,7 @@ public class MySQLConnection {
 		
 	}
 	
-	public static Connection getConexao() {
+	public static Connection getConnection() {
 		try {
 			final String url = "jdbc:mysql://localhost/unoesc_trabalho_crud";
 			final String user = "root";

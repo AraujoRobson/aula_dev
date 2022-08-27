@@ -14,11 +14,11 @@ import model.Person;
 
 public class PersonDAO implements IPersonDAO {
 	private Connection connection;
-	Person p = new Person();
+	
 	
 	@Override
 	public List<Person> listPeople() {
-		connection = MySQLConnection.getConexao();
+		connection = MySQLConnection.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		List<Person> list = new ArrayList<>();
@@ -29,21 +29,24 @@ public class PersonDAO implements IPersonDAO {
 			rs = stmt.executeQuery();
 			
 			while (rs.next()) {
-				p.setIdPerson(rs.getInt("id_person"));
-				p.setNamePerson(rs.getString("name_person"));
-				p.setBirthDate(rs.getDate("birth_date"));
-				p.setSalary(rs.getBigDecimal("salary"));
+				Person p = new Person();
+				p.setIdPerson(rs.getInt("id_pessoa"));
+				p.setNamePerson(rs.getString("nome_pessoa"));
+				p.setBirthDate(rs.getDate("data_nascimento"));
+				p.setSalary(rs.getBigDecimal("salario"));
+
+				list.add(p);
 			}
 		}  catch(SQLException e) {
 			throw new RuntimeException(e.getMessage());
 		} finally {
 			MySQLConnection.closeConnection();
-			try {
-				stmt.close();
-				rs.close();
+			try { 
+				stmt.close(); rs.close(); 
 			} catch (SQLException e) {
-				e.printStackTrace();
+				e.printStackTrace(); 
 			}
+			 
 		}
 		
 		return list;
@@ -51,6 +54,7 @@ public class PersonDAO implements IPersonDAO {
 	
 	@Override
 	public void add(Person p) {
+	
 	}
 
 	@Override

@@ -9,6 +9,9 @@ public class Person {
 	private Date birthDate;
 	private BigDecimal salary;
 	
+	public Person() {
+	}
+	
 	public Person(Integer idPerson, String namePerson, Date birthDate, BigDecimal salary) {
 		super();
 		this.idPerson = idPerson;
