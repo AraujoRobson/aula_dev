@@ -18,7 +18,7 @@ public class MySQLConnection {
 			final String password = "root";
 			
 			connection = DriverManager.getConnection(url, user, password);
-			System.out.println("Conexão realizada com sucesso");
+			//System.out.println("Conexão realizada com sucesso");
 			
 			return connection;
 		} catch (SQLException e) {
@@ -30,7 +30,7 @@ public class MySQLConnection {
 		if (connection != null) {
 			try {
 				connection.close();
-				System.out.println("Conexão fechada com sucesso!");
+			//	System.out.println("Conexão fechada com sucesso!");
 			} catch (SQLException e) {
 				throw new RuntimeException(e.getMessage());
 			}
