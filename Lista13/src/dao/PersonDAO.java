@@ -133,7 +133,34 @@ public class PersonDAO implements IPersonDAO {
 
 	@Override
 	public Person search_id(Integer id) {
-		return null;
+		connection = MySQLConnection.getConnection();
+		Person p = null;
+		try {
+			sql = "SELECT * FROM pessoa WHERE id_pessoa = ?;";
+			stmt = this.connection.prepareStatement(sql);
+			stmt.setInt(1, id);
+			
+			rs = stmt.executeQuery();
+			
+			if (rs.next()) {
+				p = new Person();
+				p.setIdPerson(rs.getInt("id_pessoa"));
+				p.setNamePerson(rs.getString("nome_pessoa"));
+				p.setBirthDate(rs.getDate("data_nascimento"));
+				p.setSalary(rs.getBigDecimal("salario"));
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			MySQLConnection.closeConnection();
+			try { 
+				stmt.close(); 
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace(); 
+			}
+		}
+		return p;
 	}
 
 }
