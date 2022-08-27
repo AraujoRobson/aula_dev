@@ -42,7 +42,8 @@ public class PersonDAO implements IPersonDAO {
 		} finally {
 			MySQLConnection.closeConnection();
 			try { 
-				stmt.close(); rs.close(); 
+				stmt.close(); 
+				rs.close(); 
 			} catch (SQLException e) {
 				e.printStackTrace(); 
 			}
@@ -53,6 +54,7 @@ public class PersonDAO implements IPersonDAO {
 	
 	@Override
 	public void add(Person p) {
+		connection = MySQLConnection.getConnection();
 		try { 
 			String sql = "INSERT INTO pessoa (nome_pessoa, data_nascimento, salario)" + 
 					"VALUES (?, ?, ?);";
@@ -68,7 +70,7 @@ public class PersonDAO implements IPersonDAO {
 		} finally {
 			MySQLConnection.closeConnection();
 			try { 
-				stmt.close(); rs.close(); 
+				stmt.close(); 
 			} catch (SQLException e) {
 				e.printStackTrace(); 
 			}
