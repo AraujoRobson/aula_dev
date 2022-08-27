@@ -17,10 +17,14 @@ public class Main {
 		
 		PersonDAO dao = new PersonDAO();
 		
-//		Person add_person = new Person(null, "Robson", 
-//				Date.valueOf("1995-10-02"), 
-//				new BigDecimal("5000.00"));
-//		dao.add(add_person);
+		Person add_person = new Person(null, "Robson Araujo", 
+				Date.valueOf("1995-10-02"), 
+				new BigDecimal("5500.00"));
+		add_person.setIdPerson(4);
+
+		//dao.add(add_person);
+		//dao.change(add_person);
+		
 		
 		List<Person> list = dao.listPeople();
 		System.out.println("Lista");
