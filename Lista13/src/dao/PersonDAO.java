@@ -17,7 +17,7 @@ public class PersonDAO implements IPersonDAO {
 	Person p = new Person();
 	
 	@Override
-	public List<Person> listPeople() throws SQLException {
+	public List<Person> listPeople() {
 		connection = MySQLConnection.getConexao();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -38,11 +38,15 @@ public class PersonDAO implements IPersonDAO {
 			throw new RuntimeException(e.getMessage());
 		} finally {
 			MySQLConnection.closeConnection();
-			stmt.close();
-			rs.close();
+			try {
+				stmt.close();
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		
-		return null;
+		return list;
 	}
 	
 	@Override

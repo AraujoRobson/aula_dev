@@ -8,6 +8,6 @@ public interface IPersonDAO {
 	void add(Person p);
 	void change(Person p);
 	void delete(Integer id);
-	List<Person> listPeople() throws SQLException;	
+	List<Person> listPeople();	
 	Person search_id(Integer id);
 }
