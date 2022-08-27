@@ -17,14 +17,16 @@ public class PersonDAO implements IPersonDAO {
 	Person p = new Person();
 	
 	@Override
-	public List<Person> listPeople() {
+	public List<Person> listPeople() throws SQLException {
 		connection = MySQLConnection.getConexao();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
 		List<Person> list = new ArrayList<>();
 		
 		try {
 			String sql = "SELECT * FROM pessoa";
-			PreparedStatement stmt = this.connection.prepareStatement(sql);
-			ResultSet rs = stmt.executeQuery();
+			stmt = this.connection.prepareStatement(sql);
+			rs = stmt.executeQuery();
 			
 			while (rs.next()) {
 				p.setIdPerson(rs.getInt("id_person"));
@@ -36,6 +38,8 @@ public class PersonDAO implements IPersonDAO {
 			throw new RuntimeException(e.getMessage());
 		} finally {
 			MySQLConnection.closeConnection();
+			stmt.close();
+			rs.close();
 		}
 		
 		return null;
