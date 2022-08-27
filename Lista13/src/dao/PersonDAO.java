@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.management.RuntimeErrorException;
+
 import db.MySQLConnection;
 import model.Person;
 
@@ -31,8 +33,8 @@ public class PersonDAO implements IPersonDAO {
 				p.setSalary(rs.getBigDecimal("salary"));
 			}
 		}  catch(SQLException e) {
-			
-		}
+			throw new RuntimeException(e.getMessage());
+		} 
 		
 		return null;
 	}
